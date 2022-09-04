@@ -3,17 +3,17 @@
      <threads>
           <ThreadTraceResult>
                <id>8</id>
-               <time>402ms</time>
+               <time>404ms</time>
                <methods>
                     <MethodTraceResult>
                          <name>FirstMethod</name>
                          <class>Example</class>
-                         <time>402ms</time>
+                         <time>404ms</time>
                          <methods>
                               <MethodTraceResult>
                                    <name>ThirdMethod</name>
                                    <class>Example</class>
-                                   <time>301ms</time>
+                                   <time>303ms</time>
                                    <methods />
                               </MethodTraceResult>
                          </methods>
@@ -22,17 +22,17 @@
           </ThreadTraceResult>
           <ThreadTraceResult>
                <id>9</id>
-               <time>402ms</time>
+               <time>404ms</time>
                <methods>
                     <MethodTraceResult>
                          <name>FirstMethod</name>
                          <class>Example</class>
-                         <time>402ms</time>
+                         <time>404ms</time>
                          <methods>
                               <MethodTraceResult>
                                    <name>ThirdMethod</name>
                                    <class>Example</class>
-                                   <time>301ms</time>
+                                   <time>303ms</time>
                                    <methods />
                               </MethodTraceResult>
                          </methods>
@@ -41,12 +41,12 @@
           </ThreadTraceResult>
           <ThreadTraceResult>
                <id>10</id>
-               <time>4012ms</time>
+               <time>4004ms</time>
                <methods>
                     <MethodTraceResult>
                          <name>SecondMethod</name>
                          <class>Example</class>
-                         <time>4012ms</time>
+                         <time>4004ms</time>
                          <methods>
                               <MethodTraceResult>
                                    <name>FourthMethod</name>
@@ -73,12 +73,12 @@
           </ThreadTraceResult>
           <ThreadTraceResult>
                <id>11</id>
-               <time>4015ms</time>
+               <time>4009ms</time>
                <methods>
                     <MethodTraceResult>
                          <name>SecondMethod</name>
                          <class>Example</class>
-                         <time>4015ms</time>
+                         <time>4009ms</time>
                          <methods>
                               <MethodTraceResult>
                                    <name>FourthMethod</name>
@@ -116,13 +116,32 @@
                </methods>
           </ThreadTraceResult>
           <ThreadTraceResult>
-               <id>14</id>
-               <time>1712ms</time>
+               <id>13</id>
+               <time>1701ms</time>
                <methods>
                     <MethodTraceResult>
                          <name>FifthMethod</name>
                          <class>Example</class>
-                         <time>1712ms</time>
+                         <time>1701ms</time>
+                         <methods>
+                              <MethodTraceResult>
+                                   <name>SixthMethod</name>
+                                   <class>Example</class>
+                                   <time>600ms</time>
+                                   <methods />
+                              </MethodTraceResult>
+                         </methods>
+                    </MethodTraceResult>
+               </methods>
+          </ThreadTraceResult>
+          <ThreadTraceResult>
+               <id>14</id>
+               <time>1701ms</time>
+               <methods>
+                    <MethodTraceResult>
+                         <name>FifthMethod</name>
+                         <class>Example</class>
+                         <time>1701ms</time>
                          <methods>
                               <MethodTraceResult>
                                    <name>SixthMethod</name>
@@ -136,12 +155,12 @@
           </ThreadTraceResult>
           <ThreadTraceResult>
                <id>15</id>
-               <time>1709ms</time>
+               <time>1701ms</time>
                <methods>
                     <MethodTraceResult>
                          <name>FifthMethod</name>
                          <class>Example</class>
-                         <time>1709ms</time>
+                         <time>1701ms</time>
                          <methods>
                               <MethodTraceResult>
                                    <name>SixthMethod</name>
@@ -155,31 +174,12 @@
           </ThreadTraceResult>
           <ThreadTraceResult>
                <id>16</id>
-               <time>1709ms</time>
+               <time>1701ms</time>
                <methods>
                     <MethodTraceResult>
                          <name>FifthMethod</name>
                          <class>Example</class>
-                         <time>1709ms</time>
-                         <methods>
-                              <MethodTraceResult>
-                                   <name>SixthMethod</name>
-                                   <class>Example</class>
-                                   <time>600ms</time>
-                                   <methods />
-                              </MethodTraceResult>
-                         </methods>
-                    </MethodTraceResult>
-               </methods>
-          </ThreadTraceResult>
-          <ThreadTraceResult>
-               <id>17</id>
-               <time>1705ms</time>
-               <methods>
-                    <MethodTraceResult>
-                         <name>FifthMethod</name>
-                         <class>Example</class>
-                         <time>1705ms</time>
+                         <time>1701ms</time>
                          <methods>
                               <MethodTraceResult>
                                    <name>SixthMethod</name>
@@ -193,36 +193,12 @@
           </ThreadTraceResult>
           <ThreadTraceResult>
                <id>18</id>
-               <time>600ms</time>
-               <methods>
-                    <MethodTraceResult>
-                         <name>SixthMethod</name>
-                         <class>Example</class>
-                         <time>600ms</time>
-                         <methods />
-                    </MethodTraceResult>
-               </methods>
-          </ThreadTraceResult>
-          <ThreadTraceResult>
-               <id>19</id>
-               <time>600ms</time>
-               <methods>
-                    <MethodTraceResult>
-                         <name>SixthMethod</name>
-                         <class>Example</class>
-                         <time>600ms</time>
-                         <methods />
-                    </MethodTraceResult>
-               </methods>
-          </ThreadTraceResult>
-          <ThreadTraceResult>
-               <id>20</id>
-               <time>1712ms</time>
+               <time>1701ms</time>
                <methods>
                     <MethodTraceResult>
                          <name>FifthMethod</name>
                          <class>Example</class>
-                         <time>1712ms</time>
+                         <time>1701ms</time>
                          <methods>
                               <MethodTraceResult>
                                    <name>SixthMethod</name>
@@ -231,6 +207,37 @@
                                    <methods />
                               </MethodTraceResult>
                          </methods>
+                    </MethodTraceResult>
+               </methods>
+          </ThreadTraceResult>
+          <ThreadTraceResult>
+               <id>19</id>
+               <time>1702ms</time>
+               <methods>
+                    <MethodTraceResult>
+                         <name>FifthMethod</name>
+                         <class>Example</class>
+                         <time>1702ms</time>
+                         <methods>
+                              <MethodTraceResult>
+                                   <name>SixthMethod</name>
+                                   <class>Example</class>
+                                   <time>600ms</time>
+                                   <methods />
+                              </MethodTraceResult>
+                         </methods>
+                    </MethodTraceResult>
+               </methods>
+          </ThreadTraceResult>
+          <ThreadTraceResult>
+               <id>20</id>
+               <time>600ms</time>
+               <methods>
+                    <MethodTraceResult>
+                         <name>SixthMethod</name>
+                         <class>Example</class>
+                         <time>600ms</time>
+                         <methods />
                     </MethodTraceResult>
                </methods>
           </ThreadTraceResult>
@@ -248,20 +255,13 @@
           </ThreadTraceResult>
           <ThreadTraceResult>
                <id>22</id>
-               <time>1700ms</time>
+               <time>600ms</time>
                <methods>
                     <MethodTraceResult>
-                         <name>FifthMethod</name>
+                         <name>SixthMethod</name>
                          <class>Example</class>
-                         <time>1700ms</time>
-                         <methods>
-                              <MethodTraceResult>
-                                   <name>SixthMethod</name>
-                                   <class>Example</class>
-                                   <time>600ms</time>
-                                   <methods />
-                              </MethodTraceResult>
-                         </methods>
+                         <time>600ms</time>
+                         <methods />
                     </MethodTraceResult>
                </methods>
           </ThreadTraceResult>
@@ -338,6 +338,18 @@
                </methods>
           </ThreadTraceResult>
           <ThreadTraceResult>
+               <id>29</id>
+               <time>600ms</time>
+               <methods>
+                    <MethodTraceResult>
+                         <name>SixthMethod</name>
+                         <class>Example</class>
+                         <time>600ms</time>
+                         <methods />
+                    </MethodTraceResult>
+               </methods>
+          </ThreadTraceResult>
+          <ThreadTraceResult>
                <id>30</id>
                <time>600ms</time>
                <methods>
@@ -351,18 +363,6 @@
           </ThreadTraceResult>
           <ThreadTraceResult>
                <id>31</id>
-               <time>600ms</time>
-               <methods>
-                    <MethodTraceResult>
-                         <name>SixthMethod</name>
-                         <class>Example</class>
-                         <time>600ms</time>
-                         <methods />
-                    </MethodTraceResult>
-               </methods>
-          </ThreadTraceResult>
-          <ThreadTraceResult>
-               <id>32</id>
                <time>600ms</time>
                <methods>
                     <MethodTraceResult>

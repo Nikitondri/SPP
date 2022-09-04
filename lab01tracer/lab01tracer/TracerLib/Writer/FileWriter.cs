@@ -14,9 +14,7 @@ public class FileWriter : IWriter
 
     public void Write(TraceResult result, ITraceResultSerializer serializer)
     {
-        using (FileStream fs = new FileStream(_fileName, FileMode.Create))
-        {
-            serializer.Serialize(result, fs);
-        }
+        using var fs = new FileStream(_fileName, FileMode.Create);
+        serializer.Serialize(result, fs);
     }
 }

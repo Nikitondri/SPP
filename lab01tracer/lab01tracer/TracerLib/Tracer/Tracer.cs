@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using System.Reflection;
 
 namespace TracerLib.Tracer;
 
@@ -14,7 +13,7 @@ public class Tracer : ITracer
 
     public void StartTrace()
     {
-        MethodBase currentMethod = new StackTrace().GetFrame(1).GetMethod();
+        var currentMethod = new StackTrace().GetFrame(1)?.GetMethod();
         _traceResult.StartTrace(Thread.CurrentThread.ManagedThreadId, currentMethod);
     }
 

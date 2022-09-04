@@ -24,7 +24,7 @@ public class TraceResult
         _threadsList = new ConcurrentDictionary<int, ThreadTraceResult>();
     }
 
-    public void StartTrace(int id, MethodBase method)
+    public void StartTrace(int id, MethodBase? method)
     {
         ThreadTraceResult threadTraceResult = _threadsList.GetOrAdd(id, new ThreadTraceResult(id));
         threadTraceResult.StartTrace(new MethodTraceResult(method));
