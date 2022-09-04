@@ -1,0 +1,64 @@
+{
+  "threads": [
+    {
+      "Key": 1,
+      "Value": {
+        "id": 1,
+        "time": "PT0.6053507S",
+        "methods": [
+          {
+            "name": "Program",
+            "class": "TestMethod_1",
+            "time": "PT0.404058S",
+            "methods": [
+              {
+                "name": "Program",
+                "class": "TestMethod_1_1",
+                "time": "PT0.1015867S",
+                "methods": []
+              },
+              {
+                "name": "Program",
+                "class": "TestMethod_1_2",
+                "time": "PT0.1002359S",
+                "methods": []
+              },
+              {
+                "name": "Program",
+                "class": "TestMethod_1_3",
+                "time": "PT0.1001389S",
+                "methods": []
+              },
+              {
+                "name": "Program",
+                "class": "TestMethod_1_4",
+                "time": "PT0.1001619S",
+                "methods": []
+              }
+            ]
+          },
+          {
+            "name": "Program",
+            "class": "TestMethod_2",
+            "time": "PT0.2012927S",
+            "methods": [
+              {
+                "name": "Program",
+                "class": "TestMethod_2_1",
+                "time": "PT0.2009791S",
+                "methods": [
+                  {
+                    "name": "Program",
+                    "class": "TestMethod_2_1_1",
+                    "time": "PT0.1001708S",
+                    "methods": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
