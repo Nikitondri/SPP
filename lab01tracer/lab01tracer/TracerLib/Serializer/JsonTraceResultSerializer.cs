@@ -1,22 +1,22 @@
 using System.Runtime.Serialization.Json;
-using TracerLib.domain;
+using System.Text;
+using TracerLib.Tracer;
 
 namespace TracerLib.Serializer;
 
 public class JsonTraceResultSerializer : ITraceResultSerializer
 {
-    protected readonly DataContractJsonSerializer jsonSerializer;
-
-    public void Serialize(Stream outStream, TraceResult traceResult)
-    {
-        using (Stream stream = outStream)
-        {
-            jsonSerializer.WriteObject(stream, traceResult);
-        }
-    }
+    private readonly DataContractJsonSerializer _jsonFormatter;
 
     public JsonTraceResultSerializer()
     {
-        jsonSerializer = new DataContractJsonSerializer(typeof(TraceResult));
+        _jsonFormatter = new DataContractJsonSerializer(typeof(TraceResult));
+    }
+
+    public void Serialize(TraceResult traceResult, Stream to)
+    {
+        using var jsonWriter = JsonReaderWriterFactory.CreateJsonWriter(to, Encoding.UTF8, ownsStream: true,
+            indent: true, indentChars: "     ");
+        _jsonFormatter.WriteObject(jsonWriter, traceResult);
     }
 }

@@ -1,8 +1,8 @@
-using TracerLib.domain;
+using TracerLib.Tracer;
 
 namespace TracerLib.Serializer;
 
 public interface ITraceResultSerializer
 {
-    void Serialize(Stream outStream, TraceResult traceResult);
+    void Serialize(TraceResult traceResult, Stream to);
 }

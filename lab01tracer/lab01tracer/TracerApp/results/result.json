@@ -1,64 +1,424 @@
 {
-  "threads": [
-    {
-      "Key": 1,
-      "Value": {
-        "id": 1,
-        "time": "PT0.6053507S",
-        "methods": [
+     "threads": [
           {
-            "name": "Program",
-            "class": "TestMethod_1",
-            "time": "PT0.404058S",
-            "methods": [
-              {
-                "name": "Program",
-                "class": "TestMethod_1_1",
-                "time": "PT0.1015867S",
-                "methods": []
-              },
-              {
-                "name": "Program",
-                "class": "TestMethod_1_2",
-                "time": "PT0.1002359S",
-                "methods": []
-              },
-              {
-                "name": "Program",
-                "class": "TestMethod_1_3",
-                "time": "PT0.1001389S",
-                "methods": []
-              },
-              {
-                "name": "Program",
-                "class": "TestMethod_1_4",
-                "time": "PT0.1001619S",
-                "methods": []
-              }
-            ]
+               "id": 8,
+               "time": "402ms",
+               "methods": [
+                    {
+                         "name": "FirstMethod",
+                         "class": "Example",
+                         "time": "402ms",
+                         "methods": [
+                              {
+                                   "name": "ThirdMethod",
+                                   "class": "Example",
+                                   "time": "301ms",
+                                   "methods": [ ]
+                              }
+                         ]
+                    }
+               ]
           },
           {
-            "name": "Program",
-            "class": "TestMethod_2",
-            "time": "PT0.2012927S",
-            "methods": [
-              {
-                "name": "Program",
-                "class": "TestMethod_2_1",
-                "time": "PT0.2009791S",
-                "methods": [
-                  {
-                    "name": "Program",
-                    "class": "TestMethod_2_1_1",
-                    "time": "PT0.1001708S",
-                    "methods": []
-                  }
-                ]
-              }
-            ]
+               "id": 9,
+               "time": "402ms",
+               "methods": [
+                    {
+                         "name": "FirstMethod",
+                         "class": "Example",
+                         "time": "402ms",
+                         "methods": [
+                              {
+                                   "name": "ThirdMethod",
+                                   "class": "Example",
+                                   "time": "301ms",
+                                   "methods": [ ]
+                              }
+                         ]
+                    }
+               ]
+          },
+          {
+               "id": 10,
+               "time": "4012ms",
+               "methods": [
+                    {
+                         "name": "SecondMethod",
+                         "class": "Example",
+                         "time": "4012ms",
+                         "methods": [
+                              {
+                                   "name": "FourthMethod",
+                                   "class": "Example",
+                                   "time": "400ms",
+                                   "methods": [ ]
+                              },
+                              {
+                                   "name": "FifthMethod",
+                                   "class": "Example",
+                                   "time": "1701ms",
+                                   "methods": [
+                                        {
+                                             "name": "SixthMethod",
+                                             "class": "Example",
+                                             "time": "600ms",
+                                             "methods": [ ]
+                                        }
+                                   ]
+                              }
+                         ]
+                    }
+               ]
+          },
+          {
+               "id": 11,
+               "time": "4015ms",
+               "methods": [
+                    {
+                         "name": "SecondMethod",
+                         "class": "Example",
+                         "time": "4015ms",
+                         "methods": [
+                              {
+                                   "name": "FourthMethod",
+                                   "class": "Example",
+                                   "time": "400ms",
+                                   "methods": [ ]
+                              },
+                              {
+                                   "name": "FifthMethod",
+                                   "class": "Example",
+                                   "time": "1701ms",
+                                   "methods": [
+                                        {
+                                             "name": "SixthMethod",
+                                             "class": "Example",
+                                             "time": "600ms",
+                                             "methods": [ ]
+                                        }
+                                   ]
+                              }
+                         ]
+                    }
+               ]
+          },
+          {
+               "id": 12,
+               "time": "600ms",
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
+          },
+          {
+               "id": 14,
+               "time": "1712ms",
+               "methods": [
+                    {
+                         "name": "FifthMethod",
+                         "class": "Example",
+                         "time": "1712ms",
+                         "methods": [
+                              {
+                                   "name": "SixthMethod",
+                                   "class": "Example",
+                                   "time": "600ms",
+                                   "methods": [ ]
+                              }
+                         ]
+                    }
+               ]
+          },
+          {
+               "id": 15,
+               "time": "1709ms",
+               "methods": [
+                    {
+                         "name": "FifthMethod",
+                         "class": "Example",
+                         "time": "1709ms",
+                         "methods": [
+                              {
+                                   "name": "SixthMethod",
+                                   "class": "Example",
+                                   "time": "600ms",
+                                   "methods": [ ]
+                              }
+                         ]
+                    }
+               ]
+          },
+          {
+               "id": 16,
+               "time": "1709ms",
+               "methods": [
+                    {
+                         "name": "FifthMethod",
+                         "class": "Example",
+                         "time": "1709ms",
+                         "methods": [
+                              {
+                                   "name": "SixthMethod",
+                                   "class": "Example",
+                                   "time": "600ms",
+                                   "methods": [ ]
+                              }
+                         ]
+                    }
+               ]
+          },
+          {
+               "id": 17,
+               "time": "1705ms",
+               "methods": [
+                    {
+                         "name": "FifthMethod",
+                         "class": "Example",
+                         "time": "1705ms",
+                         "methods": [
+                              {
+                                   "name": "SixthMethod",
+                                   "class": "Example",
+                                   "time": "600ms",
+                                   "methods": [ ]
+                              }
+                         ]
+                    }
+               ]
+          },
+          {
+               "id": 18,
+               "time": "600ms",
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
+          },
+          {
+               "id": 19,
+               "time": "600ms",
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
+          },
+          {
+               "id": 20,
+               "time": "1712ms",
+               "methods": [
+                    {
+                         "name": "FifthMethod",
+                         "class": "Example",
+                         "time": "1712ms",
+                         "methods": [
+                              {
+                                   "name": "SixthMethod",
+                                   "class": "Example",
+                                   "time": "600ms",
+                                   "methods": [ ]
+                              }
+                         ]
+                    }
+               ]
+          },
+          {
+               "id": 21,
+               "time": "600ms",
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
+          },
+          {
+               "id": 22,
+               "time": "1700ms",
+               "methods": [
+                    {
+                         "name": "FifthMethod",
+                         "class": "Example",
+                         "time": "1700ms",
+                         "methods": [
+                              {
+                                   "name": "SixthMethod",
+                                   "class": "Example",
+                                   "time": "600ms",
+                                   "methods": [ ]
+                              }
+                         ]
+                    }
+               ]
+          },
+          {
+               "id": 23,
+               "time": "600ms",
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
+          },
+          {
+               "id": 24,
+               "time": "600ms",
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
+          },
+          {
+               "id": 25,
+               "time": "600ms",
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
+          },
+          {
+               "id": 26,
+               "time": "600ms",
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
+          },
+          {
+               "id": 27,
+               "time": "600ms",
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
+          },
+          {
+               "id": 28,
+               "time": "600ms",
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
+          },
+          {
+               "id": 30,
+               "time": "600ms",
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
+          },
+          {
+               "id": 31,
+               "time": "600ms",
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
+          },
+          {
+               "id": 32,
+               "time": "600ms",
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
+          },
+          {
+               "id": 33,
+               "time": "600ms",
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
+          },
+          {
+               "id": 34,
+               "time": "600ms",
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
+          },
+          {
+               "id": 35,
+               "time": "600ms",
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
+          },
+          {
+               "id": 36,
+               "time": "600ms",
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
           }
-        ]
-      }
-    }
-  ]
+     ]
 }

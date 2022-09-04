@@ -1,53 +1,30 @@
-using System.Collections.Concurrent;
-using TracerLib.domain;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace TracerLib.Tracer;
 
 public class Tracer : ITracer
 {
-    TraceResult TracerResult { get; set; }
-    private readonly ConcurrentDictionary<int, ThreadTracer> _cdThreadTracers;
-    private static readonly object Locker = new object();
+    private readonly TraceResult _traceResult;
 
     public Tracer()
     {
-        _cdThreadTracers = new ConcurrentDictionary<int, ThreadTracer>();
+        _traceResult = new TraceResult();
     }
 
     public void StartTrace()
     {
-        ThreadTracer curThreadTracer = AddOrGetThreadTracer(Thread.CurrentThread.ManagedThreadId);
-        curThreadTracer.StartTrace();
+        MethodBase currentMethod = new StackTrace().GetFrame(1).GetMethod();
+        _traceResult.StartTrace(Thread.CurrentThread.ManagedThreadId, currentMethod);
     }
 
     public void StopTrace()
     {
-        ThreadTracer currThreadTracer = AddOrGetThreadTracer(Thread.CurrentThread.ManagedThreadId);
-        currThreadTracer.StopTrace();
+        _traceResult.StopTrace(Thread.CurrentThread.ManagedThreadId);
     }
 
     public TraceResult GetTraceResult()
     {
-        lock (Locker)
-        {
-            TracerResult = new TraceResult(_cdThreadTracers);
-        }
-
-        return TracerResult;
-    }
-
-    private ThreadTracer AddOrGetThreadTracer(int id)
-    {
-        // synchronization
-        lock(Locker)
-        {
-            // check if exists
-            if (!_cdThreadTracers.TryGetValue(id, out var threadTracer))
-            {
-                threadTracer = new ThreadTracer(id);
-                _cdThreadTracers[id] = threadTracer;
-            }
-            return threadTracer;
-        }
+        return _traceResult;
     }
 }
