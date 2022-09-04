@@ -16,10 +16,13 @@ internal static class Runner
 
         const string jsonFileName = "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerApp/results/result.json";
         const string xmlFileName = "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerApp/results/result.xml";
+        const string yamlFileName = "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerApp/results/result.yaml";
 
         LoadToFile(new JsonTraceResultSerializer(), result, jsonFileName);
         LoadToFile(new XmlTraceResultSerializer(), result, xmlFileName);
-        LoadToConsole(new JsonTraceResultSerializer(), result);
+        LoadToFile(new YamlTraceResultSerializer(), result, yamlFileName);
+        LoadToConsole(new YamlTraceResultSerializer(), result);
+        // LoadToConsole(new JsonTraceResultSerializer(), result);
     }
 
     static void LoadToFile(ITraceResultSerializer serializer, TraceResult result, string fileName)

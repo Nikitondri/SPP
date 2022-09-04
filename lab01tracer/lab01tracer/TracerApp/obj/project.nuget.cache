@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "mwfeUWl+JRkuKPevR+s0njLXbkbNB/6lV2M3PYUckZ3ZPnC81sej1fSRMhSn8NyEEQaE2XhteMPL+22nLWYpvA==",
+  "dgSpecHash": "YjygUvF20FTRzjzioqljm8YMQe529tAeQygqv0vUOBIM3xSHtoc4hBhsLTari7EIxxSa/eAdrkNvf3lLMYE6wg==",
   "success": true,
   "projectFilePath": "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerApp/TracerApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/nikita/.nuget/packages/yamldotnet/12.0.0/yamldotnet.12.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

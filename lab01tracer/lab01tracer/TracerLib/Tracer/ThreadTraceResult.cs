@@ -17,14 +17,9 @@ public sealed class ThreadTraceResult
         get => _id;
         private set => _id = value;
     }
-    [DataMember(Name = "time", Order = 1)]
-    public string Time
-    {
-        get => TimeInt.ToString() + "ms";
-        private set { }
-    }
-    [XmlIgnore]
-    public long TimeInt { get; private set; }
+
+    [DataMember(Name = "timeMs", Order = 1)]
+    public long TimeMs { get; private set; }
 
     [DataMember(Name = "methods", Order = 2)]
     public List<MethodTraceResult> Methods
@@ -35,7 +30,7 @@ public sealed class ThreadTraceResult
 
     public ThreadTraceResult()
     {
-        TimeInt = 0;
+        TimeMs = 0;
         _methods = new List<MethodTraceResult>();
         _callMethods = new Stack<MethodTraceResult>();
     }
@@ -43,7 +38,7 @@ public sealed class ThreadTraceResult
     public ThreadTraceResult(int threadId)
     {
         _id = threadId;
-        TimeInt = 0;
+        TimeMs = 0;
         _methods = new List<MethodTraceResult>();
         _callMethods = new Stack<MethodTraceResult>();
     }
@@ -69,7 +64,7 @@ public sealed class ThreadTraceResult
         lastMethod.StopTrace();
         if (_callMethods.Count == 1)
         {
-            TimeInt += lastMethod.TimeInt;
+            TimeMs += lastMethod.TimeInt;
         }
 
         _callMethods.Pop();

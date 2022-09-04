@@ -1,37 +1,18 @@
 {
      "threads": [
           {
-               "id": 8,
-               "time": "404ms",
-               "methods": [
-                    {
-                         "name": "FirstMethod",
-                         "class": "Example",
-                         "time": "404ms",
-                         "methods": [
-                              {
-                                   "name": "ThirdMethod",
-                                   "class": "Example",
-                                   "time": "303ms",
-                                   "methods": [ ]
-                              }
-                         ]
-                    }
-               ]
-          },
-          {
                "id": 9,
-               "time": "404ms",
+               "timeMs": 406,
                "methods": [
                     {
                          "name": "FirstMethod",
                          "class": "Example",
-                         "time": "404ms",
+                         "time": "406ms",
                          "methods": [
                               {
                                    "name": "ThirdMethod",
                                    "class": "Example",
-                                   "time": "303ms",
+                                   "time": "304ms",
                                    "methods": [ ]
                               }
                          ]
@@ -40,31 +21,18 @@
           },
           {
                "id": 10,
-               "time": "4004ms",
+               "timeMs": 406,
                "methods": [
                     {
-                         "name": "SecondMethod",
+                         "name": "FirstMethod",
                          "class": "Example",
-                         "time": "4004ms",
+                         "time": "406ms",
                          "methods": [
                               {
-                                   "name": "FourthMethod",
+                                   "name": "ThirdMethod",
                                    "class": "Example",
-                                   "time": "400ms",
+                                   "time": "304ms",
                                    "methods": [ ]
-                              },
-                              {
-                                   "name": "FifthMethod",
-                                   "class": "Example",
-                                   "time": "1701ms",
-                                   "methods": [
-                                        {
-                                             "name": "SixthMethod",
-                                             "class": "Example",
-                                             "time": "600ms",
-                                             "methods": [ ]
-                                        }
-                                   ]
                               }
                          ]
                     }
@@ -72,12 +40,12 @@
           },
           {
                "id": 11,
-               "time": "4009ms",
+               "timeMs": 4007,
                "methods": [
                     {
                          "name": "SecondMethod",
                          "class": "Example",
-                         "time": "4009ms",
+                         "time": "4007ms",
                          "methods": [
                               {
                                    "name": "FourthMethod",
@@ -104,7 +72,39 @@
           },
           {
                "id": 12,
-               "time": "600ms",
+               "timeMs": 4012,
+               "methods": [
+                    {
+                         "name": "SecondMethod",
+                         "class": "Example",
+                         "time": "4012ms",
+                         "methods": [
+                              {
+                                   "name": "FourthMethod",
+                                   "class": "Example",
+                                   "time": "400ms",
+                                   "methods": [ ]
+                              },
+                              {
+                                   "name": "FifthMethod",
+                                   "class": "Example",
+                                   "time": "1700ms",
+                                   "methods": [
+                                        {
+                                             "name": "SixthMethod",
+                                             "class": "Example",
+                                             "time": "600ms",
+                                             "methods": [ ]
+                                        }
+                                   ]
+                              }
+                         ]
+                    }
+               ]
+          },
+          {
+               "id": 13,
+               "timeMs": 600,
                "methods": [
                     {
                          "name": "SixthMethod",
@@ -115,32 +115,13 @@
                ]
           },
           {
-               "id": 13,
-               "time": "1701ms",
-               "methods": [
-                    {
-                         "name": "FifthMethod",
-                         "class": "Example",
-                         "time": "1701ms",
-                         "methods": [
-                              {
-                                   "name": "SixthMethod",
-                                   "class": "Example",
-                                   "time": "600ms",
-                                   "methods": [ ]
-                              }
-                         ]
-                    }
-               ]
-          },
-          {
                "id": 14,
-               "time": "1701ms",
+               "timeMs": 1703,
                "methods": [
                     {
                          "name": "FifthMethod",
                          "class": "Example",
-                         "time": "1701ms",
+                         "time": "1703ms",
                          "methods": [
                               {
                                    "name": "SixthMethod",
@@ -154,12 +135,12 @@
           },
           {
                "id": 15,
-               "time": "1701ms",
+               "timeMs": 1710,
                "methods": [
                     {
                          "name": "FifthMethod",
                          "class": "Example",
-                         "time": "1701ms",
+                         "time": "1710ms",
                          "methods": [
                               {
                                    "name": "SixthMethod",
@@ -173,12 +154,31 @@
           },
           {
                "id": 16,
-               "time": "1701ms",
+               "timeMs": 1704,
                "methods": [
                     {
                          "name": "FifthMethod",
                          "class": "Example",
-                         "time": "1701ms",
+                         "time": "1704ms",
+                         "methods": [
+                              {
+                                   "name": "SixthMethod",
+                                   "class": "Example",
+                                   "time": "600ms",
+                                   "methods": [ ]
+                              }
+                         ]
+                    }
+               ]
+          },
+          {
+               "id": 17,
+               "timeMs": 1704,
+               "methods": [
+                    {
+                         "name": "FifthMethod",
+                         "class": "Example",
+                         "time": "1704ms",
                          "methods": [
                               {
                                    "name": "SixthMethod",
@@ -192,12 +192,12 @@
           },
           {
                "id": 18,
-               "time": "1701ms",
+               "timeMs": 1704,
                "methods": [
                     {
                          "name": "FifthMethod",
                          "class": "Example",
-                         "time": "1701ms",
+                         "time": "1704ms",
                          "methods": [
                               {
                                    "name": "SixthMethod",
@@ -211,12 +211,12 @@
           },
           {
                "id": 19,
-               "time": "1702ms",
+               "timeMs": 1704,
                "methods": [
                     {
                          "name": "FifthMethod",
                          "class": "Example",
-                         "time": "1702ms",
+                         "time": "1704ms",
                          "methods": [
                               {
                                    "name": "SixthMethod",
@@ -230,7 +230,7 @@
           },
           {
                "id": 20,
-               "time": "600ms",
+               "timeMs": 600,
                "methods": [
                     {
                          "name": "SixthMethod",
@@ -242,7 +242,7 @@
           },
           {
                "id": 21,
-               "time": "600ms",
+               "timeMs": 600,
                "methods": [
                     {
                          "name": "SixthMethod",
@@ -254,7 +254,7 @@
           },
           {
                "id": 22,
-               "time": "600ms",
+               "timeMs": 600,
                "methods": [
                     {
                          "name": "SixthMethod",
@@ -266,7 +266,7 @@
           },
           {
                "id": 23,
-               "time": "600ms",
+               "timeMs": 600,
                "methods": [
                     {
                          "name": "SixthMethod",
@@ -278,7 +278,7 @@
           },
           {
                "id": 24,
-               "time": "600ms",
+               "timeMs": 600,
                "methods": [
                     {
                          "name": "SixthMethod",
@@ -290,7 +290,7 @@
           },
           {
                "id": 25,
-               "time": "600ms",
+               "timeMs": 600,
                "methods": [
                     {
                          "name": "SixthMethod",
@@ -302,7 +302,7 @@
           },
           {
                "id": 26,
-               "time": "600ms",
+               "timeMs": 600,
                "methods": [
                     {
                          "name": "SixthMethod",
@@ -314,7 +314,7 @@
           },
           {
                "id": 27,
-               "time": "600ms",
+               "timeMs": 600,
                "methods": [
                     {
                          "name": "SixthMethod",
@@ -326,7 +326,7 @@
           },
           {
                "id": 28,
-               "time": "600ms",
+               "timeMs": 600,
                "methods": [
                     {
                          "name": "SixthMethod",
@@ -338,7 +338,7 @@
           },
           {
                "id": 29,
-               "time": "600ms",
+               "timeMs": 600,
                "methods": [
                     {
                          "name": "SixthMethod",
@@ -350,7 +350,7 @@
           },
           {
                "id": 30,
-               "time": "600ms",
+               "timeMs": 600,
                "methods": [
                     {
                          "name": "SixthMethod",
@@ -361,20 +361,8 @@
                ]
           },
           {
-               "id": 31,
-               "time": "600ms",
-               "methods": [
-                    {
-                         "name": "SixthMethod",
-                         "class": "Example",
-                         "time": "600ms",
-                         "methods": [ ]
-                    }
-               ]
-          },
-          {
-               "id": 33,
-               "time": "600ms",
+               "id": 32,
+               "timeMs": 600,
                "methods": [
                     {
                          "name": "SixthMethod",
@@ -386,7 +374,7 @@
           },
           {
                "id": 34,
-               "time": "600ms",
+               "timeMs": 600,
                "methods": [
                     {
                          "name": "SixthMethod",
@@ -398,7 +386,7 @@
           },
           {
                "id": 35,
-               "time": "600ms",
+               "timeMs": 600,
                "methods": [
                     {
                          "name": "SixthMethod",
@@ -410,7 +398,19 @@
           },
           {
                "id": 36,
-               "time": "600ms",
+               "timeMs": 600,
+               "methods": [
+                    {
+                         "name": "SixthMethod",
+                         "class": "Example",
+                         "time": "600ms",
+                         "methods": [ ]
+                    }
+               ]
+          },
+          {
+               "id": 37,
+               "timeMs": 600,
                "methods": [
                     {
                          "name": "SixthMethod",
