@@ -27,7 +27,7 @@ public class TraceResult
 
     public void StartTrace(int id, MethodBase? method)
     {
-        ThreadTraceResult threadTraceResult = _threadsList.GetOrAdd(id, new ThreadTraceResult(id));
+        var threadTraceResult = _threadsList.GetOrAdd(id, new ThreadTraceResult(id));
         threadTraceResult.StartTrace(new MethodTraceResult(method));
     }
 

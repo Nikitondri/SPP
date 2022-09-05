@@ -14,12 +14,12 @@ public class Tracer : ITracer
     public void StartTrace()
     {
         var currentMethod = new StackTrace().GetFrame(1)?.GetMethod();
-        _traceResult.StartTrace(Thread.CurrentThread.ManagedThreadId, currentMethod);
+        _traceResult.StartTrace(Environment.CurrentManagedThreadId, currentMethod);
     }
 
     public void StopTrace()
     {
-        _traceResult.StopTrace(Thread.CurrentThread.ManagedThreadId);
+        _traceResult.StopTrace(Environment.CurrentManagedThreadId);
     }
 
     public TraceResult GetTraceResult()
