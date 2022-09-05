@@ -1,5 +1,4 @@
 using System.Runtime.Serialization;
-using System.Xml.Serialization;
 
 namespace TracerLib.Tracer;
 
@@ -24,7 +23,7 @@ public sealed class ThreadTraceResult
     [DataMember(Name = "methods", Order = 2)]
     public List<MethodTraceResult> Methods
     {
-        get { return _methods; }
+        get => _methods;
         private set => _methods = value;
     }
 
@@ -60,7 +59,7 @@ public sealed class ThreadTraceResult
 
     public void StopTrace()
     {
-        MethodTraceResult lastMethod = _callMethods.Peek();
+        var lastMethod = _callMethods.Peek();
         lastMethod.StopTrace();
         if (_callMethods.Count == 1)
         {

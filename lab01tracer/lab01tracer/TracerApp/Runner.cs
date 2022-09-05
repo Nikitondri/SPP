@@ -1,4 +1,5 @@
-﻿using TracerLib.Serializer;
+﻿using System.Reflection;
+using TracerLib.Serializer;
 using TracerLib.Tracer;
 using TracerLib.Writer;
 
@@ -14,14 +15,21 @@ internal static class Runner
         example.StartTest();
         var result = Tracer.GetTraceResult();
 
-        const string jsonFileName = "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerApp/results/result.json";
+        // const string jsonFileName = "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerApp/results/result.json";
         const string xmlFileName = "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerApp/results/result.xml";
         const string yamlFileName = "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerApp/results/result.yaml";
 
-        LoadToFile(new JsonTraceResultSerializer(), result, jsonFileName);
-        LoadToFile(new XmlTraceResultSerializer(), result, xmlFileName);
-        LoadToFile(new YamlTraceResultSerializer(), result, yamlFileName);
-        LoadToConsole(new YamlTraceResultSerializer(), result);
+        var a = Assembly.LoadFrom("/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/YamlTraceResultSerializerPlugin/bin/Debug/net6.0/ref/YamlTraceResultSerializerPlugin.dll");
+        // var a = Assembly.LoadFrom("/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/XmlSerializerPlugin/bin/Debug/net6.0/ref/XmlSerializerPlugin.dll");
+        var myType = a.GetType("YamlTraceResultSerializer");
+        var myMethod = myType?.GetMethod("Serialize");
+        var obj = Activator.CreateInstance(myType!);
+        myMethod?.Invoke(obj, new object?[]{result, new FileStream(xmlFileName, FileMode.Create)});
+
+        // LoadToFile(new JsonTraceResultSerializer(), result, jsonFileName);
+        // LoadToFile(new XmlTraceResultSerializer(), result, xmlFileName);
+        // LoadToFile(new YamlTraceResultSerializer(), result, yamlFileName);
+        // LoadToConsole(new YamlTraceResultSerializer(), result);
         // LoadToConsole(new JsonTraceResultSerializer(), result);
     }
 
