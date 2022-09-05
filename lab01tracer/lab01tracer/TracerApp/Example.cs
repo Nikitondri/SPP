@@ -8,7 +8,7 @@ public class Example
 
         public Example(ITracer tracer)
         {
-            this._tracer = tracer;
+            _tracer = tracer;
         }
 
         public void StartTest()
@@ -93,7 +93,7 @@ public class Example
 
             for (int i = 0; i < 2; i++)
             {
-                Thread thread = new Thread(SixthMethod);
+                var thread = new Thread(SixthMethod);
                 threads.Add(thread);
                 thread.Start();
             }

@@ -39,7 +39,7 @@ internal static class Runner
         LoadToFile(XmlSerializerPluginPath, XmlSerializerType, result, XmlFileName);
     }
 
-    static void LoadToFile(string pluginPath, string typeStr, TraceResult result, string fileName)
+    private static void LoadToFile(string pluginPath, string typeStr, TraceResult result, string fileName)
     {
         var a = Assembly.LoadFrom(pluginPath);
         var myType = a.GetType(typeStr);
