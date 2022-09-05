@@ -1,7 +1,6 @@
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.Serialization;
-using System.Xml.Serialization;
 
 namespace TracerLib.Tracer;
 
@@ -11,7 +10,6 @@ public sealed class MethodTraceResult
 {
     private string _methodName;
     private string _className;
-
     private List<MethodTraceResult> _methodsList;
     private Stopwatch _stopWatch;
 
@@ -29,14 +27,8 @@ public sealed class MethodTraceResult
         private set => _methodName = value;
     }
 
-    [DataMember(Name = "time", Order = 2)]
-    public string Time
-    {
-        get => TimeInt.ToString() + "ms";
-        private set => _methodName = value;
-    }
-
-    [XmlIgnore] public long TimeInt { get; private set; }
+    [DataMember(Name = "timeMs", Order = 2)]
+    public long TimeMs { get; private set; }
 
     [DataMember(Name = "methods", Order = 3)]
     public List<MethodTraceResult> MethodList
@@ -51,7 +43,7 @@ public sealed class MethodTraceResult
         _className = className;
         _methodsList = new List<MethodTraceResult>();
         _stopWatch = new Stopwatch();
-        TimeInt = 0;
+        TimeMs = 0;
     }
 
     public MethodTraceResult(MethodBase? method)
@@ -60,7 +52,7 @@ public sealed class MethodTraceResult
         _stopWatch = new Stopwatch();
         _methodName = method!.Name;
         _className = method.DeclaringType!.Name;
-        TimeInt = 0;
+        TimeMs = 0;
     }
 
     public void StartTrace()
@@ -71,7 +63,7 @@ public sealed class MethodTraceResult
     public void StopTrace()
     {
         _stopWatch.Stop();
-        TimeInt = _stopWatch.ElapsedMilliseconds;
+        TimeMs = _stopWatch.ElapsedMilliseconds;
         _stopWatch.Reset();
     }
 

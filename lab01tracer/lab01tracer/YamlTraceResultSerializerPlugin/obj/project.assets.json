@@ -64,19 +64,19 @@
     ]
   },
   "packageFolders": {
-    "/home/nikita/.nuget/packages/": {}
+    "C:\\Users\\nikita.zakharenko\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/YamlTraceResultSerializerPlugin/YamlTraceResultSerializerPlugin.csproj",
+      "projectUniqueName": "C:\\Users\\nikita.zakharenko\\Desktop\\tracer\\SPP\\lab01tracer\\lab01tracer\\YamlTraceResultSerializerPlugin\\YamlTraceResultSerializerPlugin.csproj",
       "projectName": "YamlTraceResultSerializerPlugin",
-      "projectPath": "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/YamlTraceResultSerializerPlugin/YamlTraceResultSerializerPlugin.csproj",
-      "packagesPath": "/home/nikita/.nuget/packages/",
-      "outputPath": "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/YamlTraceResultSerializerPlugin/obj/",
+      "projectPath": "C:\\Users\\nikita.zakharenko\\Desktop\\tracer\\SPP\\lab01tracer\\lab01tracer\\YamlTraceResultSerializerPlugin\\YamlTraceResultSerializerPlugin.csproj",
+      "packagesPath": "C:\\Users\\nikita.zakharenko\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nikita.zakharenko\\Desktop\\tracer\\SPP\\lab01tracer\\lab01tracer\\YamlTraceResultSerializerPlugin\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/nikita/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\nikita.zakharenko\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -88,8 +88,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerLib/TracerLib.csproj": {
-              "projectPath": "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerLib/TracerLib.csproj",
+            "C:\\Users\\nikita.zakharenko\\Desktop\\tracer\\SPP\\lab01tracer\\lab01tracer\\TracerLib\\TracerLib.csproj": {
+              "projectPath": "C:\\Users\\nikita.zakharenko\\Desktop\\tracer\\SPP\\lab01tracer\\lab01tracer\\TracerLib\\TracerLib.csproj",
               "excludeAssets": "runtime"
             }
           }
@@ -110,7 +110,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -119,7 +120,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.108/sdk/6.0.108/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

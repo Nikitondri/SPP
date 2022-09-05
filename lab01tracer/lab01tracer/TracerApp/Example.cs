@@ -15,7 +15,7 @@ public class Example
     {
         var threads = new List<Thread>();
 
-        for (int i = 0; i < 5; i++)
+        for (var i = 0; i < 5; i++)
         {
             Thread thread;
             switch (i)
@@ -56,9 +56,9 @@ public class Example
         _tracer.StartTrace();
         var threads = new List<Thread>();
 
-        for (int i = 0; i < 3; i++)
+        for (var i = 0; i < 3; i++)
         {
-            Thread thread = new Thread(FifthMethod);
+            var thread = new Thread(FifthMethod);
             threads.Add(thread);
             thread.Start();
         }
@@ -93,7 +93,7 @@ public class Example
         _tracer.StartTrace();
         var threads = new List<Thread>();
 
-        for (int i = 0; i < 2; i++)
+        for (var i = 0; i < 2; i++)
         {
             var thread = new Thread(SixthMethod);
             threads.Add(thread);

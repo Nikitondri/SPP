@@ -63,7 +63,7 @@ public sealed class ThreadTraceResult
         lastMethod.StopTrace();
         if (_callMethods.Count == 1)
         {
-            TimeMs += lastMethod.TimeInt;
+            TimeMs += lastMethod.TimeMs;
         }
 
         _callMethods.Pop();
