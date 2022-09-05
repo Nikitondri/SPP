@@ -1,12 +1,31 @@
 ﻿using System.Reflection;
-using TracerLib.Serializer;
 using TracerLib.Tracer;
-using TracerLib.Writer;
 
 namespace TracerApp;
 
 internal static class Runner
 {
+    private const string YamlSerializerType = "YamlTraceResultSerializerPlugin.YamlTraceResultSerializer";
+    private const string JsonSerializerType = "JsonSerializerPlugin.JsonTraceResultSerializer";
+    private const string XmlSerializerType = "XmlSerializerPlugin.XmlTraceResultSerializer";
+
+    private const string YamlSerializerPluginPath =
+        "../../../../YamlTraceResultSerializerPlugin/bin/Debug/net6.0/YamlTraceResultSerializerPlugin.dll";
+
+    private const string JsonSerializerPluginPath =
+        "../../../../JsonSerializerPlugin/bin/Debug/net6.0/JsonSerializerPlugin.dll";
+
+    private const string XmlSerializerPluginPath =
+        "../../../../XmlSerializerPlugin/bin/Debug/net6.0/XmlSerializerPlugin.dll";
+    
+    private const string JsonFileName =
+        "../../../results/result.json";
+    private const string XmlFileName =
+        "../../../results/result.xml";
+    private const string YamlFileName =
+        "../../../results/result.yaml";
+
+
     private static readonly Tracer Tracer = new();
 
     private static void Main()
@@ -14,35 +33,18 @@ internal static class Runner
         var example = new Example(Tracer);
         example.StartTest();
         var result = Tracer.GetTraceResult();
+        
+        LoadToFile(YamlSerializerPluginPath, YamlSerializerType, result, YamlFileName);
+        LoadToFile(JsonSerializerPluginPath, JsonSerializerType, result, JsonFileName);
+        LoadToFile(XmlSerializerPluginPath, XmlSerializerType, result, XmlFileName);
+    }
 
-        // const string jsonFileName = "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerApp/results/result.json";
-        const string xmlFileName = "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerApp/results/result.xml";
-        const string yamlFileName = "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerApp/results/result.yaml";
-
-        var a = Assembly.LoadFrom("/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/YamlTraceResultSerializerPlugin/bin/Debug/net6.0/ref/YamlTraceResultSerializerPlugin.dll");
-        // var a = Assembly.LoadFrom("/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/XmlSerializerPlugin/bin/Debug/net6.0/ref/XmlSerializerPlugin.dll");
-        var myType = a.GetType("YamlTraceResultSerializer");
+    static void LoadToFile(string pluginPath, string typeStr, TraceResult result, string fileName)
+    {
+        var a = Assembly.LoadFrom(pluginPath);
+        var myType = a.GetType(typeStr);
         var myMethod = myType?.GetMethod("Serialize");
         var obj = Activator.CreateInstance(myType!);
-        myMethod?.Invoke(obj, new object?[]{result, new FileStream(xmlFileName, FileMode.Create)});
-
-        // LoadToFile(new JsonTraceResultSerializer(), result, jsonFileName);
-        // LoadToFile(new XmlTraceResultSerializer(), result, xmlFileName);
-        // LoadToFile(new YamlTraceResultSerializer(), result, yamlFileName);
-        // LoadToConsole(new YamlTraceResultSerializer(), result);
-        // LoadToConsole(new JsonTraceResultSerializer(), result);
-    }
-
-    static void LoadToFile(ITraceResultSerializer serializer, TraceResult result, string fileName)
-    {
-        IWriter writer = new FileWriter(fileName);
-        writer.Write(result, serializer);
-    }
-
-    static void LoadToConsole(ITraceResultSerializer serializer, TraceResult result)
-    {
-        IWriter writer = new ConsoleWriter();
-        writer.Write(result, serializer);
+        myMethod?.Invoke(obj, new object?[] { result, new FileStream(fileName, FileMode.Create) });
     }
 }
-
