@@ -9,6 +9,7 @@ namespace TracerLib.Tracer;
 public class TraceResult
 {
     private ConcurrentDictionary<int, ThreadTraceResult> _threadsList;
+
     [DataMember(Name = "threads")]
     public List<ThreadTraceResult> Threads
     {
@@ -36,6 +37,7 @@ public class TraceResult
         {
             throw new ArgumentException("Invalid thread ID");
         }
+
         threadTraceResult.StopTrace();
     }
 }

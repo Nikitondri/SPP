@@ -17,11 +17,13 @@ internal static class Runner
 
     private const string XmlSerializerPluginPath =
         "../../../../XmlSerializerPlugin/bin/Debug/net6.0/XmlSerializerPlugin.dll";
-    
+
     private const string JsonFileName =
         "../../../results/result.json";
+
     private const string XmlFileName =
         "../../../results/result.xml";
+
     private const string YamlFileName =
         "../../../results/result.yaml";
 
@@ -33,7 +35,7 @@ internal static class Runner
         var example = new Example(Tracer);
         example.StartTest();
         var result = Tracer.GetTraceResult();
-        
+
         LoadToFile(YamlSerializerPluginPath, YamlSerializerType, result, YamlFileName);
         LoadToFile(JsonSerializerPluginPath, JsonSerializerType, result, JsonFileName);
         LoadToFile(XmlSerializerPluginPath, XmlSerializerType, result, XmlFileName);

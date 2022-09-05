@@ -40,12 +40,12 @@
           },
           {
                "id": 11,
-               "timeMs": 4009,
+               "timeMs": 4005,
                "methods": [
                     {
                          "name": "SecondMethod",
                          "class": "Example",
-                         "time": "4009ms",
+                         "time": "4005ms",
                          "methods": [
                               {
                                    "name": "FourthMethod",
@@ -72,12 +72,12 @@
           },
           {
                "id": 12,
-               "timeMs": 4010,
+               "timeMs": 4004,
                "methods": [
                     {
                          "name": "SecondMethod",
                          "class": "Example",
-                         "time": "4010ms",
+                         "time": "4004ms",
                          "methods": [
                               {
                                    "name": "FourthMethod",
@@ -116,12 +116,12 @@
           },
           {
                "id": 14,
-               "timeMs": 1706,
+               "timeMs": 1701,
                "methods": [
                     {
                          "name": "FifthMethod",
                          "class": "Example",
-                         "time": "1706ms",
+                         "time": "1701ms",
                          "methods": [
                               {
                                    "name": "SixthMethod",
@@ -135,12 +135,12 @@
           },
           {
                "id": 15,
-               "timeMs": 1708,
+               "timeMs": 1701,
                "methods": [
                     {
                          "name": "FifthMethod",
                          "class": "Example",
-                         "time": "1708ms",
+                         "time": "1701ms",
                          "methods": [
                               {
                                    "name": "SixthMethod",
@@ -154,12 +154,12 @@
           },
           {
                "id": 16,
-               "timeMs": 1703,
+               "timeMs": 1701,
                "methods": [
                     {
                          "name": "FifthMethod",
                          "class": "Example",
-                         "time": "1703ms",
+                         "time": "1701ms",
                          "methods": [
                               {
                                    "name": "SixthMethod",
@@ -173,12 +173,12 @@
           },
           {
                "id": 17,
-               "timeMs": 1706,
+               "timeMs": 1701,
                "methods": [
                     {
                          "name": "FifthMethod",
                          "class": "Example",
-                         "time": "1706ms",
+                         "time": "1701ms",
                          "methods": [
                               {
                                    "name": "SixthMethod",
@@ -192,12 +192,12 @@
           },
           {
                "id": 18,
-               "timeMs": 1706,
+               "timeMs": 1701,
                "methods": [
                     {
                          "name": "FifthMethod",
                          "class": "Example",
-                         "time": "1706ms",
+                         "time": "1701ms",
                          "methods": [
                               {
                                    "name": "SixthMethod",
@@ -211,12 +211,12 @@
           },
           {
                "id": 19,
-               "timeMs": 1706,
+               "timeMs": 1703,
                "methods": [
                     {
                          "name": "FifthMethod",
                          "class": "Example",
-                         "time": "1706ms",
+                         "time": "1703ms",
                          "methods": [
                               {
                                    "name": "SixthMethod",

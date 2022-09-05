@@ -21,6 +21,7 @@ public sealed class MethodTraceResult
         get => _methodName;
         private set => _methodName = value;
     }
+
     [DataMember(Name = "class", Order = 1)]
     public string ClassName
     {
@@ -35,8 +36,7 @@ public sealed class MethodTraceResult
         private set => _methodName = value;
     }
 
-    [XmlIgnore]
-    public long TimeInt { get; private set; }
+    [XmlIgnore] public long TimeInt { get; private set; }
 
     [DataMember(Name = "methods", Order = 3)]
     public List<MethodTraceResult> MethodList

@@ -26,12 +26,12 @@ threads:
       timeInt: 303
       methodList: []
 - id: 11
-  timeMs: 4009
+  timeMs: 4005
   methods:
   - methodName: SecondMethod
     className: Example
-    time: 4009ms
-    timeInt: 4009
+    time: 4005ms
+    timeInt: 4005
     methodList:
     - methodName: FourthMethod
       className: Example
@@ -49,12 +49,12 @@ threads:
         timeInt: 600
         methodList: []
 - id: 12
-  timeMs: 4010
+  timeMs: 4004
   methods:
   - methodName: SecondMethod
     className: Example
-    time: 4010ms
-    timeInt: 4010
+    time: 4004ms
+    timeInt: 4004
     methodList:
     - methodName: FourthMethod
       className: Example
@@ -80,12 +80,12 @@ threads:
     timeInt: 600
     methodList: []
 - id: 14
-  timeMs: 1706
+  timeMs: 1701
   methods:
   - methodName: FifthMethod
     className: Example
-    time: 1706ms
-    timeInt: 1706
+    time: 1701ms
+    timeInt: 1701
     methodList:
     - methodName: SixthMethod
       className: Example
@@ -93,12 +93,12 @@ threads:
       timeInt: 600
       methodList: []
 - id: 15
-  timeMs: 1708
+  timeMs: 1701
   methods:
   - methodName: FifthMethod
     className: Example
-    time: 1708ms
-    timeInt: 1708
+    time: 1701ms
+    timeInt: 1701
     methodList:
     - methodName: SixthMethod
       className: Example
@@ -106,12 +106,12 @@ threads:
       timeInt: 600
       methodList: []
 - id: 16
-  timeMs: 1703
+  timeMs: 1701
   methods:
   - methodName: FifthMethod
     className: Example
-    time: 1703ms
-    timeInt: 1703
+    time: 1701ms
+    timeInt: 1701
     methodList:
     - methodName: SixthMethod
       className: Example
@@ -119,12 +119,12 @@ threads:
       timeInt: 600
       methodList: []
 - id: 17
-  timeMs: 1706
+  timeMs: 1701
   methods:
   - methodName: FifthMethod
     className: Example
-    time: 1706ms
-    timeInt: 1706
+    time: 1701ms
+    timeInt: 1701
     methodList:
     - methodName: SixthMethod
       className: Example
@@ -132,12 +132,12 @@ threads:
       timeInt: 600
       methodList: []
 - id: 18
-  timeMs: 1706
+  timeMs: 1701
   methods:
   - methodName: FifthMethod
     className: Example
-    time: 1706ms
-    timeInt: 1706
+    time: 1701ms
+    timeInt: 1701
     methodList:
     - methodName: SixthMethod
       className: Example
@@ -145,12 +145,12 @@ threads:
       timeInt: 600
       methodList: []
 - id: 19
-  timeMs: 1706
+  timeMs: 1703
   methods:
   - methodName: FifthMethod
     className: Example
-    time: 1706ms
-    timeInt: 1706
+    time: 1703ms
+    timeInt: 1703
     methodList:
     - methodName: SixthMethod
       className: Example
