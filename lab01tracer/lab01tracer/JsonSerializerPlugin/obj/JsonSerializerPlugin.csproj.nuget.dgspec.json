@@ -1,0 +1,122 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/JsonSerializerPlugin.csproj": {}
+  },
+  "projects": {
+    "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/JsonSerializerPlugin.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/JsonSerializerPlugin.csproj",
+        "projectName": "JsonSerializerPlugin",
+        "projectPath": "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/JsonSerializerPlugin.csproj",
+        "packagesPath": "/home/nikita/.nuget/packages/",
+        "outputPath": "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/nikita/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerLib/TracerLib.csproj": {
+                "projectPath": "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerLib/TracerLib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.108/sdk/6.0.108/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerLib/TracerLib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerLib/TracerLib.csproj",
+        "projectName": "TracerLib",
+        "projectPath": "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerLib/TracerLib.csproj",
+        "packagesPath": "/home/nikita/.nuget/packages/",
+        "outputPath": "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/TracerLib/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/nikita/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "YamlDotNet": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.108/sdk/6.0.108/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

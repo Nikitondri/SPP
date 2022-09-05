@@ -1,0 +1,15 @@
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/bin/Debug/net6.0/JsonSerializerPlugin.deps.json
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/bin/Debug/net6.0/JsonSerializerPlugin.dll
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/bin/Debug/net6.0/ref/JsonSerializerPlugin.dll
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/bin/Debug/net6.0/JsonSerializerPlugin.pdb
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/bin/Debug/net6.0/TracerLib.dll
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/bin/Debug/net6.0/TracerLib.pdb
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/obj/Debug/net6.0/JsonSerializerPlugin.csproj.AssemblyReference.cache
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/obj/Debug/net6.0/JsonSerializerPlugin.GeneratedMSBuildEditorConfig.editorconfig
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/obj/Debug/net6.0/JsonSerializerPlugin.AssemblyInfoInputs.cache
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/obj/Debug/net6.0/JsonSerializerPlugin.AssemblyInfo.cs
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/obj/Debug/net6.0/JsonSerializerPlugin.csproj.CoreCompileInputs.cache
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/obj/Debug/net6.0/JsonSerializerPlugin.csproj.CopyComplete
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/obj/Debug/net6.0/JsonSerializerPlugin.dll
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/obj/Debug/net6.0/ref/JsonSerializerPlugin.dll
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/obj/Debug/net6.0/JsonSerializerPlugin.pdb

@@ -1,0 +1,15 @@
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/XmlSerializerPlugin/bin/Debug/net6.0/XmlSerializerPlugin.deps.json
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/XmlSerializerPlugin/bin/Debug/net6.0/XmlSerializerPlugin.dll
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/XmlSerializerPlugin/bin/Debug/net6.0/ref/XmlSerializerPlugin.dll
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/XmlSerializerPlugin/bin/Debug/net6.0/XmlSerializerPlugin.pdb
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/XmlSerializerPlugin/bin/Debug/net6.0/TracerLib.dll
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/XmlSerializerPlugin/bin/Debug/net6.0/TracerLib.pdb
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/XmlSerializerPlugin/obj/Debug/net6.0/XmlSerializerPlugin.csproj.AssemblyReference.cache
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/XmlSerializerPlugin/obj/Debug/net6.0/XmlSerializerPlugin.GeneratedMSBuildEditorConfig.editorconfig
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/XmlSerializerPlugin/obj/Debug/net6.0/XmlSerializerPlugin.AssemblyInfoInputs.cache
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/XmlSerializerPlugin/obj/Debug/net6.0/XmlSerializerPlugin.AssemblyInfo.cs
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/XmlSerializerPlugin/obj/Debug/net6.0/XmlSerializerPlugin.csproj.CoreCompileInputs.cache
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/XmlSerializerPlugin/obj/Debug/net6.0/XmlSerializerPlugin.csproj.CopyComplete
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/XmlSerializerPlugin/obj/Debug/net6.0/XmlSerializerPlugin.dll
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/XmlSerializerPlugin/obj/Debug/net6.0/ref/XmlSerializerPlugin.dll
+/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/XmlSerializerPlugin/obj/Debug/net6.0/XmlSerializerPlugin.pdb

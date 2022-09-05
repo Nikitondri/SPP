@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "rcuLDRSgiGxnVADGJuWDLmYZG13+hfUR/PLkMvjDXqbOglazaRtxGm6lrG7eCiBxme6TQp5rmP4sqTmR0wN4Ug==",
+  "success": true,
+  "projectFilePath": "/home/nikita/university/semester05/SPP/lab01tracer/lab01tracer/JsonSerializerPlugin/JsonSerializerPlugin.csproj",
+  "expectedPackageFiles": [
+    "/home/nikita/.nuget/packages/yamldotnet/12.0.0/yamldotnet.12.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
