@@ -11,10 +11,21 @@
           "lib/net6.0/YamlDotNet.dll": {}
         }
       },
+      "AbstractionSerializerPlugin/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/AbstractionSerializerPlugin.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AbstractionSerializerPlugin.dll": {}
+        }
+      },
       "TracerLib/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "AbstractionSerializerPlugin": "1.0.0",
           "YamlDotNet": "12.0.0"
         },
         "compile": {
@@ -52,6 +63,11 @@
         "yamldotnet.nuspec"
       ]
     },
+    "AbstractionSerializerPlugin/1.0.0": {
+      "type": "project",
+      "path": "../AbstractionSerializerPlugin/AbstractionSerializerPlugin.csproj",
+      "msbuildProject": "../AbstractionSerializerPlugin/AbstractionSerializerPlugin.csproj"
+    },
     "TracerLib/1.0.0": {
       "type": "project",
       "path": "../TracerLib/TracerLib.csproj",
@@ -60,6 +76,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AbstractionSerializerPlugin >= 1.0.0",
       "TracerLib >= 1.0.0"
     ]
   },
@@ -88,6 +105,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\nikita.zakharenko\\Desktop\\tracer\\SPP\\lab01tracer\\lab01tracer\\AbstractionSerializerPlugin\\AbstractionSerializerPlugin.csproj": {
+              "projectPath": "C:\\Users\\nikita.zakharenko\\Desktop\\tracer\\SPP\\lab01tracer\\lab01tracer\\AbstractionSerializerPlugin\\AbstractionSerializerPlugin.csproj"
+            },
             "C:\\Users\\nikita.zakharenko\\Desktop\\tracer\\SPP\\lab01tracer\\lab01tracer\\TracerLib\\TracerLib.csproj": {
               "projectPath": "C:\\Users\\nikita.zakharenko\\Desktop\\tracer\\SPP\\lab01tracer\\lab01tracer\\TracerLib\\TracerLib.csproj"
             }

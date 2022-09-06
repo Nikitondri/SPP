@@ -203,3 +203,5 @@ C:\Users\nikita.zakharenko\Desktop\tracer\SPP\lab01tracer\lab01tracer\TracerTest
 C:\Users\nikita.zakharenko\Desktop\tracer\SPP\lab01tracer\lab01tracer\TracerTests\obj\Debug\net6.0\TracerTests.pdb
 C:\Users\nikita.zakharenko\Desktop\tracer\SPP\lab01tracer\lab01tracer\TracerTests\obj\Debug\net6.0\TracerTests.genruntimeconfig.cache
 C:\Users\nikita.zakharenko\Desktop\tracer\SPP\lab01tracer\lab01tracer\TracerTests\obj\Debug\net6.0\ref\TracerTests.dll
+C:\Users\nikita.zakharenko\Desktop\tracer\SPP\lab01tracer\lab01tracer\TracerTests\bin\Debug\net6.0\AbstractionSerializerPlugin.dll
+C:\Users\nikita.zakharenko\Desktop\tracer\SPP\lab01tracer\lab01tracer\TracerTests\bin\Debug\net6.0\AbstractionSerializerPlugin.pdb

@@ -22,8 +22,14 @@
           }
         }
       },
+      "AbstractionSerializerPlugin/1.0.0": {
+        "runtime": {
+          "AbstractionSerializerPlugin.dll": {}
+        }
+      },
       "TracerLib/1.0.0": {
         "dependencies": {
+          "AbstractionSerializerPlugin": "1.0.0",
           "YamlDotNet": "12.0.0"
         },
         "runtime": {
@@ -44,6 +50,11 @@
       "sha512": "sha512-sMp20zI63j7xVoor98vGeDxteLeyuAlM330L7XbXxMMPjLdP1mwoK/5Nn/8Vldc9hUMN5otkg88bVLEtQnPdaw==",
       "path": "yamldotnet/12.0.0",
       "hashPath": "yamldotnet.12.0.0.nupkg.sha512"
+    },
+    "AbstractionSerializerPlugin/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "TracerLib/1.0.0": {
       "type": "project",
