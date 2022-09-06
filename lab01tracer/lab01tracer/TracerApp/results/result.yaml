@@ -1,55 +1,36 @@
 threads:
 - id: 7
-  timeMs: 412
+  timeMs: 420
   methods:
   - methodName: FirstMethod
     className: Example
-    timeMs: 412
+    timeMs: 420
     methodList:
     - methodName: ThirdMethod
       className: Example
-      timeMs: 310
-      methodList: []
-- id: 8
-  timeMs: 412
-  methods:
-  - methodName: FirstMethod
-    className: Example
-    timeMs: 412
-    methodList:
-    - methodName: ThirdMethod
-      className: Example
-      timeMs: 310
+      timeMs: 309
       methodList: []
 - id: 9
-  timeMs: 4064
+  timeMs: 421
   methods:
-  - methodName: SecondMethod
+  - methodName: FirstMethod
     className: Example
-    timeMs: 4064
+    timeMs: 421
     methodList:
-    - methodName: FourthMethod
+    - methodName: ThirdMethod
       className: Example
-      timeMs: 401
+      timeMs: 309
       methodList: []
-    - methodName: FifthMethod
-      className: Example
-      timeMs: 1724
-      methodList:
-      - methodName: SixthMethod
-        className: Example
-        timeMs: 606
-        methodList: []
 - id: 10
-  timeMs: 4064
+  timeMs: 4126
   methods:
   - methodName: SecondMethod
     className: Example
-    timeMs: 4064
+    timeMs: 4126
     methodList:
     - methodName: FourthMethod
       className: Example
-      timeMs: 401
+      timeMs: 402
       methodList: []
     - methodName: FifthMethod
       className: Example
@@ -57,191 +38,210 @@ threads:
       methodList:
       - methodName: SixthMethod
         className: Example
-        timeMs: 606
+        timeMs: 607
         methodList: []
-- id: 11
-  timeMs: 614
-  methods:
-  - methodName: SixthMethod
-    className: Example
-    timeMs: 614
-    methodList: []
 - id: 12
-  timeMs: 1730
+  timeMs: 1742
   methods:
   - methodName: FifthMethod
     className: Example
-    timeMs: 1730
+    timeMs: 1742
     methodList:
     - methodName: SixthMethod
       className: Example
-      timeMs: 604
+      timeMs: 605
       methodList: []
 - id: 13
-  timeMs: 1730
+  timeMs: 4119
   methods:
-  - methodName: FifthMethod
+  - methodName: SecondMethod
     className: Example
-    timeMs: 1730
+    timeMs: 4119
     methodList:
-    - methodName: SixthMethod
+    - methodName: FourthMethod
       className: Example
-      timeMs: 604
+      timeMs: 403
       methodList: []
+    - methodName: FifthMethod
+      className: Example
+      timeMs: 1724
+      methodList:
+      - methodName: SixthMethod
+        className: Example
+        timeMs: 607
+        methodList: []
 - id: 14
-  timeMs: 1730
+  timeMs: 1755
   methods:
   - methodName: FifthMethod
     className: Example
-    timeMs: 1730
+    timeMs: 1755
     methodList:
     - methodName: SixthMethod
       className: Example
-      timeMs: 604
+      timeMs: 605
       methodList: []
 - id: 15
-  timeMs: 1729
-  methods:
-  - methodName: FifthMethod
-    className: Example
-    timeMs: 1729
-    methodList:
-    - methodName: SixthMethod
-      className: Example
-      timeMs: 604
-      methodList: []
-- id: 16
-  timeMs: 611
+  timeMs: 607
   methods:
   - methodName: SixthMethod
     className: Example
-    timeMs: 611
+    timeMs: 607
+    methodList: []
+- id: 16
+  timeMs: 606
+  methods:
+  - methodName: SixthMethod
+    className: Example
+    timeMs: 606
     methodList: []
 - id: 17
-  timeMs: 610
-  methods:
-  - methodName: SixthMethod
-    className: Example
-    timeMs: 610
-    methodList: []
-- id: 18
-  timeMs: 1728
+  timeMs: 1755
   methods:
   - methodName: FifthMethod
     className: Example
-    timeMs: 1728
+    timeMs: 1755
     methodList:
     - methodName: SixthMethod
       className: Example
-      timeMs: 604
+      timeMs: 605
       methodList: []
 - id: 19
-  timeMs: 609
-  methods:
-  - methodName: SixthMethod
-    className: Example
-    timeMs: 609
-    methodList: []
-- id: 20
-  timeMs: 1728
-  methods:
-  - methodName: FifthMethod
-    className: Example
-    timeMs: 1728
-    methodList:
-    - methodName: SixthMethod
-      className: Example
-      timeMs: 604
-      methodList: []
-- id: 21
-  timeMs: 609
-  methods:
-  - methodName: SixthMethod
-    className: Example
-    timeMs: 609
-    methodList: []
-- id: 22
-  timeMs: 609
-  methods:
-  - methodName: SixthMethod
-    className: Example
-    timeMs: 609
-    methodList: []
-- id: 23
-  timeMs: 608
-  methods:
-  - methodName: SixthMethod
-    className: Example
-    timeMs: 608
-    methodList: []
-- id: 24
-  timeMs: 608
-  methods:
-  - methodName: SixthMethod
-    className: Example
-    timeMs: 608
-    methodList: []
-- id: 25
-  timeMs: 607
-  methods:
-  - methodName: SixthMethod
-    className: Example
-    timeMs: 607
-    methodList: []
-- id: 26
-  timeMs: 607
-  methods:
-  - methodName: SixthMethod
-    className: Example
-    timeMs: 607
-    methodList: []
-- id: 27
-  timeMs: 607
-  methods:
-  - methodName: SixthMethod
-    className: Example
-    timeMs: 607
-    methodList: []
-- id: 28
-  timeMs: 605
-  methods:
-  - methodName: SixthMethod
-    className: Example
-    timeMs: 605
-    methodList: []
-- id: 29
-  timeMs: 605
-  methods:
-  - methodName: SixthMethod
-    className: Example
-    timeMs: 605
-    methodList: []
-- id: 33
-  timeMs: 604
-  methods:
-  - methodName: SixthMethod
-    className: Example
-    timeMs: 604
-    methodList: []
-- id: 34
-  timeMs: 603
-  methods:
-  - methodName: SixthMethod
-    className: Example
-    timeMs: 603
-    methodList: []
-- id: 35
   timeMs: 602
   methods:
   - methodName: SixthMethod
     className: Example
     timeMs: 602
     methodList: []
-- id: 36
-  timeMs: 601
+- id: 20
+  timeMs: 1750
+  methods:
+  - methodName: FifthMethod
+    className: Example
+    timeMs: 1750
+    methodList:
+    - methodName: SixthMethod
+      className: Example
+      timeMs: 605
+      methodList: []
+- id: 21
+  timeMs: 614
   methods:
   - methodName: SixthMethod
     className: Example
-    timeMs: 601
+    timeMs: 614
+    methodList: []
+- id: 22
+  timeMs: 615
+  methods:
+  - methodName: SixthMethod
+    className: Example
+    timeMs: 615
+    methodList: []
+- id: 23
+  timeMs: 1748
+  methods:
+  - methodName: FifthMethod
+    className: Example
+    timeMs: 1748
+    methodList:
+    - methodName: SixthMethod
+      className: Example
+      timeMs: 605
+      methodList: []
+- id: 25
+  timeMs: 614
+  methods:
+  - methodName: SixthMethod
+    className: Example
+    timeMs: 614
+    methodList: []
+- id: 26
+  timeMs: 1745
+  methods:
+  - methodName: FifthMethod
+    className: Example
+    timeMs: 1745
+    methodList:
+    - methodName: SixthMethod
+      className: Example
+      timeMs: 606
+      methodList: []
+- id: 27
+  timeMs: 613
+  methods:
+  - methodName: SixthMethod
+    className: Example
+    timeMs: 613
+    methodList: []
+- id: 28
+  timeMs: 609
+  methods:
+  - methodName: SixthMethod
+    className: Example
+    timeMs: 609
+    methodList: []
+- id: 29
+  timeMs: 611
+  methods:
+  - methodName: SixthMethod
+    className: Example
+    timeMs: 611
+    methodList: []
+- id: 31
+  timeMs: 608
+  methods:
+  - methodName: SixthMethod
+    className: Example
+    timeMs: 608
+    methodList: []
+- id: 32
+  timeMs: 608
+  methods:
+  - methodName: SixthMethod
+    className: Example
+    timeMs: 608
+    methodList: []
+- id: 33
+  timeMs: 609
+  methods:
+  - methodName: SixthMethod
+    className: Example
+    timeMs: 609
+    methodList: []
+- id: 34
+  timeMs: 614
+  methods:
+  - methodName: SixthMethod
+    className: Example
+    timeMs: 614
+    methodList: []
+- id: 35
+  timeMs: 605
+  methods:
+  - methodName: SixthMethod
+    className: Example
+    timeMs: 605
+    methodList: []
+- id: 36
+  timeMs: 603
+  methods:
+  - methodName: SixthMethod
+    className: Example
+    timeMs: 603
+    methodList: []
+- id: 37
+  timeMs: 604
+  methods:
+  - methodName: SixthMethod
+    className: Example
+    timeMs: 604
+    methodList: []
+- id: 38
+  timeMs: 603
+  methods:
+  - methodName: SixthMethod
+    className: Example
+    timeMs: 603
     methodList: []
 

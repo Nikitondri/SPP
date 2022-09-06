@@ -1,5 +1,5 @@
-﻿using System.Reflection;
-using TracerLib.Tracer;
+﻿using TracerLib.Tracer;
+using TracerLib.Writer;
 
 namespace TracerApp;
 
@@ -28,7 +28,9 @@ internal static class Runner
         "../../../results/result.yaml";
 
 
-    private static readonly Tracer Tracer = new();
+    private static readonly ITracer Tracer = new Tracer();
+    private static readonly ITraceResultWriter Writer = new TraceResultWriter();
+    
 
     private static void Main()
     {
@@ -36,17 +38,8 @@ internal static class Runner
         example.StartTest();
         var result = Tracer.GetTraceResult();
 
-        LoadToFile(YamlSerializerPluginPath, YamlSerializerType, result, YamlFileName);
-        LoadToFile(JsonSerializerPluginPath, JsonSerializerType, result, JsonFileName);
-        LoadToFile(XmlSerializerPluginPath, XmlSerializerType, result, XmlFileName);
-    }
-
-    private static void LoadToFile(string pluginPath, string typeStr, TraceResult result, string fileName)
-    {
-        var a = Assembly.LoadFrom(pluginPath);
-        var myType = a.GetType(typeStr);
-        var myMethod = myType?.GetMethod("Serialize");
-        var obj = Activator.CreateInstance(myType!);
-        myMethod?.Invoke(obj, new object?[] { result, new FileStream(fileName, FileMode.Create) });
+        Writer.WriteToFile(YamlSerializerPluginPath, YamlSerializerType, result, YamlFileName);
+        Writer.WriteToFile(JsonSerializerPluginPath, JsonSerializerType, result, JsonFileName);
+        Writer.WriteToFile(XmlSerializerPluginPath, XmlSerializerType, result, XmlFileName);
     }
 }
