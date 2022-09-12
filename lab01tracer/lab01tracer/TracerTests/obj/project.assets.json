@@ -892,10 +892,21 @@
           "lib/net6.0/YamlDotNet.dll": {}
         }
       },
+      "AbstractionSerializerPlugin/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/AbstractionSerializerPlugin.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AbstractionSerializerPlugin.dll": {}
+        }
+      },
       "TracerLib/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "AbstractionSerializerPlugin": "1.0.0",
           "YamlDotNet": "12.0.0"
         },
         "compile": {
@@ -3891,6 +3902,11 @@
         "yamldotnet.12.0.0.nupkg.sha512",
         "yamldotnet.nuspec"
       ]
+    },
+    "AbstractionSerializerPlugin/1.0.0": {
+      "type": "project",
+      "path": "../AbstractionSerializerPlugin/AbstractionSerializerPlugin.csproj",
+      "msbuildProject": "../AbstractionSerializerPlugin/AbstractionSerializerPlugin.csproj"
     },
     "TracerLib/1.0.0": {
       "type": "project",

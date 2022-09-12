@@ -1,7 +1,7 @@
 ﻿using System.Runtime.Serialization.Json;
 using System.Text;
-using TracerLib.Serializer;
-using TracerLib.Tracer;
+using AbstractionSerializerPlugin.Dto;
+using AbstractionSerializerPlugin.Serializer;
 
 namespace JsonSerializerPlugin;
 
@@ -11,10 +11,10 @@ public class JsonTraceResultSerializer : ITraceResultSerializer
 
     public JsonTraceResultSerializer()
     {
-        _jsonFormatter = new DataContractJsonSerializer(typeof(TraceResult));
+        _jsonFormatter = new DataContractJsonSerializer(typeof(TraceResultDto));
     }
 
-    public void Serialize(TraceResult traceResult, Stream to)
+    public void Serialize(TraceResultDto traceResult, Stream to)
     {
         using var jsonWriter = JsonReaderWriterFactory.CreateJsonWriter(to, Encoding.UTF8, ownsStream: true,
             indent: true, indentChars: "     ");

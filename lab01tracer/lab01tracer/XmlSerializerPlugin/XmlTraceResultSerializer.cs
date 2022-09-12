@@ -1,7 +1,7 @@
 ﻿using System.Runtime.Serialization;
 using System.Xml;
-using TracerLib.Serializer;
-using TracerLib.Tracer;
+using AbstractionSerializerPlugin.Dto;
+using AbstractionSerializerPlugin.Serializer;
 
 namespace XmlSerializerPlugin;
 
@@ -12,7 +12,7 @@ public class XmlTraceResultSerializer : ITraceResultSerializer
 
     public XmlTraceResultSerializer()
     {
-        _xmlConverter = new DataContractSerializer(typeof(TraceResult));
+        _xmlConverter = new DataContractSerializer(typeof(TraceResultDto));
         _xmlWriterSettings = new XmlWriterSettings
         {
             Indent = true,
@@ -20,7 +20,7 @@ public class XmlTraceResultSerializer : ITraceResultSerializer
         };
     }
 
-    public void Serialize(TraceResult traceResult, Stream to)
+    public void Serialize(TraceResultDto traceResult, Stream to)
     {
         using var xmlWriter = XmlWriter.Create(to, _xmlWriterSettings);
         _xmlConverter.WriteObject(xmlWriter, traceResult);

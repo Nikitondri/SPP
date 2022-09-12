@@ -1,30 +1,23 @@
-using System.Runtime.Serialization;
-
 namespace TracerLib.Tracer;
 
-[Serializable]
-[DataContract]
+
 public sealed class ThreadTraceResult
 {
     private int _id;
     private List<MethodTraceResult> _methods;
     private Stack<MethodTraceResult> _callMethods;
 
-    [DataMember(Name = "id", Order = 0)]
     public int Id
     {
         get => _id;
         private set => _id = value;
     }
 
-    [DataMember(Name = "timeMs", Order = 1)]
     public long TimeMs { get; private set; }
 
-    [DataMember(Name = "methods", Order = 2)]
-    public List<MethodTraceResult> Methods
+    public IReadOnlyList<MethodTraceResult> Methods
     {
         get => _methods;
-        private set => _methods = value;
     }
 
     public ThreadTraceResult()
@@ -34,7 +27,7 @@ public sealed class ThreadTraceResult
         _callMethods = new Stack<MethodTraceResult>();
     }
 
-    public ThreadTraceResult(int threadId)
+    internal ThreadTraceResult(int threadId)
     {
         _id = threadId;
         TimeMs = 0;
@@ -42,7 +35,7 @@ public sealed class ThreadTraceResult
         _callMethods = new Stack<MethodTraceResult>();
     }
 
-    public void StartTrace(MethodTraceResult method)
+    internal void StartTrace(MethodTraceResult method)
     {
         if (_callMethods.Count == 0)
         {
@@ -57,15 +50,14 @@ public sealed class ThreadTraceResult
         method.StartTrace();
     }
 
-    public void StopTrace()
+    internal void StopTrace()
     {
-        var lastMethod = _callMethods.Peek();
+        var lastMethod = _callMethods.Pop();
         lastMethod.StopTrace();
-        if (_callMethods.Count == 1)
+        if (_callMethods.Count == 0)
         {
             TimeMs += lastMethod.TimeMs;
         }
 
-        _callMethods.Pop();
     }
 }

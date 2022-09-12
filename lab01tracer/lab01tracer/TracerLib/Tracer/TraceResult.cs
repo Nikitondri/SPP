@@ -4,14 +4,12 @@ using System.Runtime.Serialization;
 
 namespace TracerLib.Tracer;
 
-[Serializable]
-[DataContract]
+
 public class TraceResult
 {
     private ConcurrentDictionary<int, ThreadTraceResult> _threadsList;
 
-    [DataMember(Name = "threads")]
-    public List<ThreadTraceResult> Threads
+    public IReadOnlyList<ThreadTraceResult> Threads
     {
         get
         {
@@ -25,13 +23,13 @@ public class TraceResult
         _threadsList = new ConcurrentDictionary<int, ThreadTraceResult>();
     }
 
-    public void StartTrace(int id, MethodBase? method)
+    internal void StartTrace(int id, MethodBase? method)
     {
         var threadTraceResult = _threadsList.GetOrAdd(id, new ThreadTraceResult(id));
         threadTraceResult.StartTrace(new MethodTraceResult(method));
     }
 
-    public void StopTrace(int id)
+    internal void StopTrace(int id)
     {
         if (!_threadsList.TryGetValue(id, out var threadTraceResult))
         {
