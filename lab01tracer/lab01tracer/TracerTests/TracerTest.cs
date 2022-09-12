@@ -31,7 +31,7 @@ public class TracerTest
         NestingLevel2Method(sleepTime);
         _tracer.StopTrace();
     }
-    
+
     private void NestingLevel0Method(int sleepTime)
     {
         _tracer.StartTrace();
@@ -46,11 +46,15 @@ public class TracerTest
     [TestCase(200)]
     public void TimeOfSingleThreadTest(int sleepTime)
     {
+        var threadId = Thread.CurrentThread.ManagedThreadId;
         NestingLevel2Method(sleepTime);
         var traceResult = _tracer.GetTraceResult();
         Assert.True(traceResult.Threads[0].TimeMs >= sleepTime);
+        Assert.AreEqual(nameof(NestingLevel2Method), traceResult.Threads[0].Methods[0].MethodName);
+        Assert.AreEqual(nameof(TracerTest), traceResult.Threads[0].Methods[0].ClassName);
+        Assert.AreEqual(threadId, traceResult.Threads[0].Id);
     }
-    
+
     [TestCase(0, 0)]
     [TestCase(0, 1)]
     [TestCase(1, 0)]
@@ -60,12 +64,15 @@ public class TracerTest
     public void TimeOfMultiThreadTest(int sleepTime, int threadsCount)
     {
         var threads = new List<Thread>();
+        var threadsId = new List<int>();
         for (var i = 0; i < threadsCount; i++)
         {
             var thread = new Thread(() => NestingLevel0Method(sleepTime));
+            threadsId.Add(thread.ManagedThreadId);
             threads.Add(thread);
             thread.Start();
         }
+
         foreach (var thread in threads)
         {
             thread.Join();
@@ -76,17 +83,33 @@ public class TracerTest
 
         Assert.True(actualTime >= sleepTime * threadsCount);
         Assert.AreEqual(threadsCount, traceResult.Threads.Count);
+        for (var i = 0; i < threadsId.Count; i++)
+        {
+            Assert.AreEqual(threadsId[i], traceResult.Threads[i].Id);
+            Assert.AreEqual(nameof(NestingLevel0Method), traceResult.Threads[i].Methods[0].MethodName);
+            Assert.AreEqual(nameof(TracerTest), traceResult.Threads[i].Methods[0].ClassName);
+            Assert.AreEqual(nameof(NestingLevel1Method), traceResult.Threads[i].Methods[0].MethodList[0].MethodName);
+            Assert.AreEqual(nameof(NestingLevel2Method),
+                traceResult.Threads[i].Methods[0].MethodList[0].MethodList[0].MethodName);
+        }
     }
-    
+
     [TestCase(0)]
     [TestCase(1)]
     [TestCase(100)]
     [TestCase(200)]
     public void TimeOfNestedMethods(int sleepTime)
     {
+        var threadId = Thread.CurrentThread.ManagedThreadId;
         NestingLevel0Method(sleepTime);
         var traceResult = _tracer.GetTraceResult();
         Assert.True(traceResult.Threads[0].TimeMs >= sleepTime * 3);
+        Assert.AreEqual(threadId, traceResult.Threads[0].Id);
+        Assert.AreEqual(nameof(NestingLevel0Method), traceResult.Threads[0].Methods[0].MethodName);
+        Assert.AreEqual(nameof(NestingLevel1Method), traceResult.Threads[0].Methods[0].MethodList[0].MethodName);
+        Assert.AreEqual(nameof(NestingLevel2Method),
+            traceResult.Threads[0].Methods[0].MethodList[0].MethodList[0].MethodName);
+        Assert.AreEqual(nameof(TracerTest), traceResult.Threads[0].Methods[0].ClassName);
     }
 
     [TestCase(0)]
@@ -95,12 +118,19 @@ public class TracerTest
     [TestCase(200)]
     public void MultipleMethodSingleThreadTest(int sleepTime)
     {
+        var threadId = Thread.CurrentThread.ManagedThreadId;
+        
         NestingLevel2Method(sleepTime);
-        NestingLevel2Method(sleepTime * 2);
+        NestingLevel1Method(sleepTime * 2);
 
         var traceResult = _tracer.GetTraceResult();
         Assert.AreEqual(1, traceResult.Threads.Count);
         Assert.AreEqual(2, traceResult.Threads[0].Methods.Count);
         Assert.True(traceResult.Threads[0].TimeMs >= sleepTime * 3);
+        Assert.AreEqual(nameof(NestingLevel2Method), traceResult.Threads[0].Methods[0].MethodName);
+        Assert.AreEqual(nameof(NestingLevel1Method), traceResult.Threads[0].Methods[1].MethodName);
+        Assert.AreEqual(nameof(NestingLevel2Method), traceResult.Threads[0].Methods[1].MethodList[0].MethodName);
+        Assert.AreEqual(nameof(TracerTest), traceResult.Threads[0].Methods[0].ClassName);
+        Assert.AreEqual(threadId, traceResult.Threads[0].Id);
     }
 }
