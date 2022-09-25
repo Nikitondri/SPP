@@ -1,17 +1,16 @@
 using Faker.Generator.Context;
-using Faker.Generator.Interface;
 
 namespace Faker.Generator.GeneratorLeafs;
 
-public class LongGenerator: IValueGenerator
+public class IntGenerator : IValueGenerator
 {
     public object Generate(Type typeToGenerate, GeneratorContext context)
     {
-        return context.Random.NextInt64(int.MinValue, int.MaxValue);
+        return context.Random.Next(int.MinValue, int.MaxValue);
     }
 
     public bool CanGenerate(Type type)
     {
-        return type == typeof(long);
+        return type == typeof(int);
     }
 }

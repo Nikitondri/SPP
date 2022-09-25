@@ -1,5 +1,5 @@
+using Faker.Exception;
 using Faker.Generator.Context;
-using Faker.Generator.Interface;
 
 namespace Faker.Generator;
 
@@ -21,7 +21,7 @@ public class GeneratorComposite : IValueGenerator
         {
             return generator.Generate(typeToGenerate, context);
         }
-        throw new Exception();
+        throw new CanNotGenerateException();
     }
 
     public bool CanGenerate(Type type)

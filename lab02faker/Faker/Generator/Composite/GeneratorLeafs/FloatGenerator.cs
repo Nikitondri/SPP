@@ -1,17 +1,16 @@
 using Faker.Generator.Context;
-using Faker.Generator.Interface;
 
 namespace Faker.Generator.GeneratorLeafs;
 
-public class ByteGenerator : IValueGenerator
+public class FloatGenerator : IValueGenerator
 {
     public object Generate(Type typeToGenerate, GeneratorContext context)
     {
-        return (byte)context.Random.Next(byte.MinValue, byte.MaxValue);
+        return context.Random.NextSingle();
     }
 
     public bool CanGenerate(Type type)
     {
-        return type == typeof(byte);
+        return type == typeof(float);
     }
 }

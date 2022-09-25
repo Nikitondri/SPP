@@ -1,19 +1,22 @@
+using Faker.Exception;
+using Faker.Faker.Creator;
 using Faker.Generator;
 using Faker.Generator.Context;
-using Faker.Generator.Interface;
 
-namespace Faker.Faker;
+namespace Faker.Faker.impl;
 
 public class FakerImpl : IFaker
 {
 
-    private IValueGenerator _generator;
-    private GeneratorContext _context;
+    private readonly IValueGenerator _generator;
+    private readonly GeneratorContext _context;
+    private readonly IObjectCreator _creator;
 
     public FakerImpl()
     {
         _generator = new GeneratorComposite();
         _context = new GeneratorContext(new Random((int)DateTime.Now.Ticks), this);
+        _creator = new ObjectCreatorImpl(this);
     }
 
     public T Create<T>()
@@ -27,6 +30,7 @@ public class FakerImpl : IFaker
         {
             return _generator.Generate(type, _context);
         }
-        throw new Exception();
+        return _creator.Create(type);
+        // throw new CanNotGenerateException();
     }
 }

@@ -1,8 +1,8 @@
 using System;
-using Faker.Faker;
+using Faker.Faker.impl;
+using Faker.Generator;
 using Faker.Generator.Context;
 using Faker.Generator.GeneratorLeafs;
-using Faker.Generator.Interface;
 using NUnit.Framework;
 
 namespace TestFaker.Generator.GeneratorLeafs;

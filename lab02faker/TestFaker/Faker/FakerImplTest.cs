@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Faker.Faker;
+using Faker.Faker.impl;
 using NUnit.Framework;
 
 namespace TestFaker.Faker;

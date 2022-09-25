@@ -1,6 +1,6 @@
 using Faker.Generator.Context;
 
-namespace Faker.Generator.Interface;
+namespace Faker.Generator;
 
 public interface IValueGenerator
 {

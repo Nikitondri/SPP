@@ -1,5 +1,4 @@
 using Faker.Generator.Context;
-using Faker.Generator.Interface;
 
 namespace Faker.Generator.GeneratorLeafs;
 

@@ -1,17 +1,16 @@
 using Faker.Generator.Context;
-using Faker.Generator.Interface;
 
 namespace Faker.Generator.GeneratorLeafs;
 
-public class DoubleGenerator : IValueGenerator
+public class BooleanGenerator : IValueGenerator
 {
     public object Generate(Type typeToGenerate, GeneratorContext context)
     {
-        return context.Random.NextDouble();
+        return context.Random.Next(0, 1) == 0;
     }
 
     public bool CanGenerate(Type type)
     {
-        return type == typeof(double);
+        return type == typeof(bool);
     }
 }
