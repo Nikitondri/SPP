@@ -46,8 +46,17 @@ public class ObjectCreatorImplTest
     }
 
     [Test]
+    public void CreateConstructorWithException()
+    {
+        var obj = (ConstructorWithException)_creator.Create(typeof(ConstructorWithException));
+        Assert.True(obj.Field1.Length is > 0 and < 50 && !obj.Field1.Contains(" "));
+        Assert.True(obj.Field2.Length is > 0 and < 50 && !obj.Field2.Contains(" "));
+        Assert.True(obj.Field3.Length is > 0 and < 50 && !obj.Field3.Contains(" "));
+    }
+
+    [Test]
     public void CreateNoConstructor()
     {
-        Assert.Throws<NoPublicConstructorException>(() => _creator.Create(typeof(NoConstructor)));
+        Assert.Throws<ConstructorException>(() => _creator.Create(typeof(NoConstructor)));
     }
 }

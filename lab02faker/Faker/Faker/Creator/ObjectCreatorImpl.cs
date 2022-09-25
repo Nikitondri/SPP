@@ -14,38 +14,56 @@ public class ObjectCreatorImpl : IObjectCreator
 
     public object Create(Type type)
     {
-        var constructor = FindConstructorWithMaxParams(type);
-        var result = CreateByConstructor(constructor);
+        var constructors = FindConstructorWithMaxParams(type);
+        var result = CreateByConstructor(constructors, type);
         FillFieldsByProperties(type, ref result);
         return result;
     }
 
-    private static ConstructorInfo FindConstructorWithMaxParams(Type type)
+    private static IEnumerable<ConstructorInfo> FindConstructorWithMaxParams(Type type)
     {
         try
         {
             return type
                 .GetConstructors()
-                .OrderByDescending(info => info.GetParameters().Length)
-                .First();
+                .OrderByDescending(info => info.GetParameters().Length);
         }
         catch (System.Exception)
         {
-            throw new NoPublicConstructorException();
+            throw new ConstructorException();
         }
     }
 
-    private object CreateByConstructor(ConstructorInfo constructorInfo)
+    private object CreateByConstructor(IEnumerable<ConstructorInfo> constructors, Type type)
     {
-        var paramValues = new object[constructorInfo.GetParameters().Length];
-        var parameters = constructorInfo.GetParameters();
-
-        for (var i = 0; i < paramValues.Length; i++)
+        foreach (var constructorInfo in constructors)
         {
-            paramValues[i] = InvokeCreateFaker(parameters[i].ParameterType)!;
+            try
+            {
+                var paramValues = new object[constructorInfo.GetParameters().Length];
+                var parameters = constructorInfo.GetParameters();
+
+                for (var i = 0; i < paramValues.Length; i++)
+                {
+                    paramValues[i] = InvokeCreateFaker(parameters[i].ParameterType)!;
+                }
+                return constructorInfo.Invoke(paramValues);
+            }
+            catch (System.Exception)
+            {
+                // ignored
+            }
         }
 
-        return constructorInfo.Invoke(paramValues);
+        try
+        {
+            return Activator.CreateInstance(type)!;
+        }
+        catch (System.Exception)
+        {
+            // ignored
+        }
+        throw new ConstructorException();
     }
 
     private void FillFieldsByProperties(Type type, ref object result)
