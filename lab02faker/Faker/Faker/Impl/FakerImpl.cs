@@ -1,6 +1,7 @@
 using Faker.Faker.Checker;
 using Faker.Faker.Creator;
 using Faker.Generator;
+using Faker.Generator.Composite;
 using Faker.Generator.Context;
 
 namespace Faker.Faker.impl;

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Faker.Exception;
 using Faker.Faker;
 using Faker.Faker.impl;
@@ -12,7 +13,6 @@ namespace TestFaker.Faker;
 [TestFixture]
 public class FakerImplTest
 {
-
     private readonly IFaker _faker = new FakerImpl();
 
     [Test]
@@ -25,7 +25,7 @@ public class FakerImplTest
             Assert.True(str.Length is > 0 and < 50);
         }
     }
-    
+
     [Test]
     public void CreateListNoPrimitiveTest()
     {
@@ -46,7 +46,7 @@ public class FakerImplTest
         Assert.True(structure.surname.Length is > 0 and < 50);
         Assert.True(structure.age is > int.MinValue and < int.MaxValue);
     }
-    
+
     [Test]
     public void StructureWithConstructorTest()
     {
@@ -74,7 +74,7 @@ public class FakerImplTest
             .Invoke(_faker, new object[] { });
         Assert.True(result?.GetType() == type);
     }
-    
+
     [Test]
     public void CreateUser()
     {
@@ -83,7 +83,7 @@ public class FakerImplTest
         Assert.True(user.Age is > int.MinValue and < int.MaxValue);
         Assert.True(user.Name.Length is > 0 and < 50 && !user.Name.Contains(" "));
     }
-    
+
     [Test]
     public void CreateCat()
     {
@@ -105,7 +105,6 @@ public class FakerImplTest
         Assert.True(userAndCat.cat.getAge() is > int.MinValue and < int.MaxValue);
         Assert.True(userAndCat.cat.Name.Length is > 0 and < 50 && !userAndCat.cat.Name.Contains(" "));
         Assert.True(userAndCat.cat.type.Length is > 0 and < 50 && !userAndCat.cat.type.Contains(" "));
-        
     }
 
     [Test]
@@ -116,7 +115,7 @@ public class FakerImplTest
         Assert.True(obj.Field2.Length is > 0 and < 50 && !obj.Field2.Contains(" "));
         Assert.True(obj.Field3.Length is > 0 and < 50 && !obj.Field3.Contains(" "));
     }
-    
+
     [Test]
     public void CycleDependencyTest()
     {
@@ -132,6 +131,25 @@ public class FakerImplTest
     [Test]
     public void CreateNoConstructor()
     {
-        Assert.Throws<ConstructorException>(() => _faker.Create<NoConstructor>());
+        Assert.Throws<CreateObjectException>(() => _faker.Create<NoConstructor>());
+    }
+
+    [Test]
+    public void UnsupportedTypeTest()
+    {
+        Assert.Throws<CreateObjectException>(() => _faker.Create<Uri>());
+        Assert.Throws<CreateObjectException>(() => _faker.Create<IDictionary<int, int>>());
+    }
+
+    [Test]
+    public void NestedListTest()
+    {
+        var list = _faker.Create<List<List<int>>>();
+        Assert.True(list.Count is > 0 and < 10);
+        Assert.True(list[0].Count is > 0 and < 10);
+        foreach (var value in list.SelectMany(nestedList => nestedList))
+        {
+            Assert.NotNull(value);
+        }
     }
 }

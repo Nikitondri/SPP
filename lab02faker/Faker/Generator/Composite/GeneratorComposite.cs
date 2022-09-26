@@ -1,7 +1,7 @@
 using Faker.Exception;
 using Faker.Generator.Context;
 
-namespace Faker.Generator;
+namespace Faker.Generator.Composite;
 
 public class GeneratorComposite : IValueGenerator
 {

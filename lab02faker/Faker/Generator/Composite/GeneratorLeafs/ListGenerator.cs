@@ -1,7 +1,7 @@
 using System.Collections;
 using Faker.Generator.Context;
 
-namespace Faker.Generator.GeneratorLeafs;
+namespace Faker.Generator.Composite.GeneratorLeafs;
 
 public class ListGenerator : IValueGenerator
 {

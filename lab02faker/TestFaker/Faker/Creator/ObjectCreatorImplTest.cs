@@ -57,6 +57,6 @@ public class ObjectCreatorImplTest
     [Test]
     public void CreateNoConstructor()
     {
-        Assert.Throws<ConstructorException>(() => _creator.Create(typeof(NoConstructor)));
+        Assert.Throws<CreateObjectException>(() => _creator.Create(typeof(NoConstructor)));
     }
 }

@@ -2,6 +2,7 @@ using System;
 using Faker.Faker;
 using Faker.Faker.impl;
 using Faker.Generator;
+using Faker.Generator.Composite;
 using Faker.Generator.Context;
 using NUnit.Framework;
 

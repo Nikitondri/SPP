@@ -30,7 +30,7 @@ public class ObjectCreatorImpl : IObjectCreator
         }
         catch (System.Exception)
         {
-            throw new ConstructorException();
+            throw new CreateObjectException();
         }
     }
 
@@ -63,7 +63,7 @@ public class ObjectCreatorImpl : IObjectCreator
         {
             // ignored
         }
-        throw new ConstructorException();
+        throw new CreateObjectException();
     }
 
     private void FillFieldsByProperties(Type type, ref object result)

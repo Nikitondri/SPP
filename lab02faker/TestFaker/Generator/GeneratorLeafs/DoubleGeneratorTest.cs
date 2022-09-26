@@ -16,7 +16,7 @@ public class DoubleGeneratorTest
     private readonly Type _type = typeof(double);
     
     [Test, Retry(5)]
-    public void CanGenerateTest()
+    public void GenerateTest()
     {
         var result1 = (double)_doubleGenerator.Generate(_type, _context);
         var result2 = (double)_doubleGenerator.Generate(_type, _context);
@@ -29,7 +29,7 @@ public class DoubleGeneratorTest
     }
     
     [Test, Retry(5)]
-    public void GenerateTest()
+    public void CanGenerateTest()
     {
         Assert.True(_doubleGenerator.Generate(_type, _context).GetType() == _type);
     }

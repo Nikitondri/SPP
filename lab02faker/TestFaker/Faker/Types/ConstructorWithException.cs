@@ -13,7 +13,7 @@ public class ConstructorWithException
         Field1 = field1;
         Field2 = field2;
         Field3 = field3;
-        throw new ConstructorException();
+        throw new CreateObjectException();
     }
 
     public ConstructorWithException(string field1, string field2)
