@@ -5,6 +5,15 @@
         <TargetFramework>net6.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
+        <RootNamespace>lab03directory_scanner</RootNamespace>
     </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="resources" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\core\core.csproj" />
+    </ItemGroup>
 
 </Project>
