@@ -27,4 +27,9 @@ public class InMemoryNodesRepository : IRepository<Node>
     {
         return Nodes.TryGetValue(id, out var result) ? result : throw new NotFoundException();
     }
+
+    public int GetSize()
+    {
+        return Nodes.Count;
+    }
 }

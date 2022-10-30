@@ -20,6 +20,7 @@ public abstract class Node
 
     protected Node()
     {
+        Childrens = new ConcurrentBag<Node>();
     }
 
     public abstract NodeType GetType();

@@ -1,6 +1,4 @@
-﻿using core.model.node;
-
-namespace core.model;
+﻿namespace core.model.node;
 
 public class FileNode : Node
 {

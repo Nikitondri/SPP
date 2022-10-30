@@ -4,8 +4,8 @@ namespace core.service;
 
 public interface IScanner
 {
-    bool IsFinished();
-    void Start();
+    bool IsFinish();
+    void Start(string path);
     void Stop();
     Node GetResult();
 }
