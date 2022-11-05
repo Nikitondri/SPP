@@ -1,5 +1,4 @@
-﻿using System.Collections.Concurrent;
-using core.exception;
+﻿using core.exception;
 using core.factory;
 using core.model;
 using core.model.node;
@@ -14,6 +13,7 @@ public class LocalStorageScanner : IScanner
     private readonly ThreadPoolScanner _scanner;
     private readonly INodesCalculator _percentCalculator;
     private readonly INodesCalculator _sizeCalculator;
+    private readonly object _obj = new();
 
 
     public LocalStorageScanner()
@@ -84,15 +84,15 @@ public class LocalStorageScanner : IScanner
     {
         if (_repository.GetSize() != 0 && parentId.HasValue)
         {
-            // lock (obj)
-            // {
+            lock (_obj)
+            {
                 var parentNode = _repository.FindById(parentId.Value);
                 if (parentNode is null)
                     throw new ArgumentException();
             
                 newNode.Parent = parentNode;
                 parentNode.Childrens.Add(newNode);
-            // }
+            }
         }
         _repository.Add(newNode);
     }

@@ -1,9 +1,9 @@
-﻿using core.model;
+﻿using core.exception;
 using core.model.node;
 
 namespace core.factory;
 
-public class NodeFactory
+public static class NodeFactory
 {
     public static Node CreateNode(NodeType nodeType)
     {
@@ -11,7 +11,7 @@ public class NodeFactory
         {
             NodeType.File => new FileNode(),
             NodeType.Package => new Package(),
-            _ => throw new Exception("Unknown node type")
+            _ => throw new UnknownNodeException()
         };
     }
 }
