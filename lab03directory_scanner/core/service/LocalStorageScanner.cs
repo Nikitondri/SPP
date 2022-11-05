@@ -15,8 +15,7 @@ public class LocalStorageScanner : IScanner
     private readonly ThreadPoolScanner _scanner;
     private readonly INodesCalculator _calculatorComposite;
     private readonly object _obj = new();
-
-
+    
     public LocalStorageScanner()
     {
         _repository = new InMemoryNodesRepository();
@@ -82,8 +81,6 @@ public class LocalStorageScanner : IScanner
             _scanner.AddTask(ScanFile, scanData);
         }
     }
-    
-    
 
     private void AddNode(int? parentId, Node newNode)
     {
