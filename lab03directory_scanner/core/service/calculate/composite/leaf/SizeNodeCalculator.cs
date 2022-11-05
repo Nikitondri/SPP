@@ -1,6 +1,6 @@
 ﻿using core.model.node;
 
-namespace core.service.calculate;
+namespace core.service.calculate.composite.leaf;
 
 public class SizeNodeCalculator : INodesCalculator
 {

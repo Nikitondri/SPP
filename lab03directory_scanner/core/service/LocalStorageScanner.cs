@@ -5,6 +5,7 @@ using core.model;
 using core.model.node;
 using core.repository;
 using core.service.calculate;
+using core.service.calculate.composite;
 
 namespace core.service;
 
@@ -12,8 +13,7 @@ public class LocalStorageScanner : IScanner
 {
     private readonly IRepository<Node> _repository;
     private readonly ThreadPoolScanner _scanner;
-    private readonly INodesCalculator _percentCalculator;
-    private readonly INodesCalculator _sizeCalculator;
+    private readonly INodesCalculator _calculatorComposite;
     private readonly object _obj = new();
 
 
@@ -21,8 +21,7 @@ public class LocalStorageScanner : IScanner
     {
         _repository = new InMemoryNodesRepository();
         _scanner = new ThreadPoolScanner();
-        _percentCalculator = new PercentNodesCalculator();
-        _sizeCalculator = new SizeNodeCalculator();
+        _calculatorComposite = new NodeCalculatorComposite();
     }
 
     public bool IsFinish()
@@ -120,8 +119,7 @@ public class LocalStorageScanner : IScanner
     public Node GetResult()
     {
         var root = _repository.FindById(1);
-        _sizeCalculator.Calculate(root);
-        _percentCalculator.Calculate(root);
+        _calculatorComposite.Calculate(root);
         return root;
     }
 }
