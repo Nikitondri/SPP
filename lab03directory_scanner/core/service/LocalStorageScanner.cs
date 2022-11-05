@@ -41,6 +41,7 @@ public class LocalStorageScanner : IScanner
     {
         string filePath;
         NodeType fileType;
+        var isLink = false;
         long? fileSize;
         
         if (data.ParentId.HasValue)
@@ -62,13 +63,15 @@ public class LocalStorageScanner : IScanner
         }
         else
         {
-            fileSize = (new FileInfo(filePath)).Length;
+            var fileInfo = new FileInfo(filePath);
+            fileSize = fileInfo.Length;
+            isLink = fileInfo.Extension == ".lnk"; 
             fileType = NodeType.File;
         }
 
         var node = NodeFactory.CreateNode(fileType);
         node.Name = data.FileName;
-        if (fileSize != null) node.Size = fileSize.Value;
+        if (fileSize != null && !isLink) node.Size = fileSize.Value;
 
         AddNode(data.ParentId, node);
 

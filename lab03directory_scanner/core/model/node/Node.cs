@@ -17,7 +17,7 @@ public abstract class Node
     public double Percent { get; set; }
     
     public Node? Parent { get; set; }
-    
+
     public ConcurrentBag<Node>? Childrens { get; set; }
     
     
