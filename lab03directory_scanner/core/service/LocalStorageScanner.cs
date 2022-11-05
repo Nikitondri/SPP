@@ -117,8 +117,8 @@ public class LocalStorageScanner : IScanner
     public Node GetResult()
     {
         var root = _repository.FindById(1);
-        _percentCalculator.Calculate(root);
         _sizeCalculator.Calculate(root);
+        _percentCalculator.Calculate(root);
         return root;
     }
 }

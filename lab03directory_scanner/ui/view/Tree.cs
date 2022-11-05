@@ -11,18 +11,16 @@ internal static class Tree
     {
         var viewNode = ViewNodeFactory.CreateNode(node.GetType());
         viewNode.Name = node.Name;
-        viewNode.Size = viewNode.Size;
+        viewNode.Size = node.Size!.Value;
         viewNode.Percent = node.Percent;
 
-        if (node.Childrens != null)
-        {
-            viewNode.ViewNodes = new ObservableCollection<NodeView>();
+        if (node.Childrens == null) return viewNode;
+        viewNode.ViewNodes = new ObservableCollection<NodeView>();
         
-            foreach (var child in node.Childrens)
-            {
-                var childNode = child.ToTreeViewNode();
-                viewNode.ViewNodes.Add(childNode);
-            }
+        foreach (var child in node.Childrens)
+        {
+            var childNode = child.ToTreeViewNode();
+            viewNode.ViewNodes.Add(childNode);
         }
         return viewNode;
     }

@@ -12,18 +12,14 @@ public abstract class Node
     
     public string Route { get => _route ??= GetRoute(); }
     
-    public long Size { get; set; }
+    public long? Size { get; set; }
     
     public double Percent { get; set; }
     
     public Node? Parent { get; set; }
     
     public ConcurrentBag<Node>? Childrens { get; set; }
-
-    protected Node()
-    {
-        Childrens = new ConcurrentBag<Node>();
-    }
+    
     
     private string GetRoute()
     {
