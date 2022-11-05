@@ -90,7 +90,7 @@ public class LocalStorageScanner : IScanner
             {
                 var parentNode = _repository.FindById(parentId.Value);
                 if (parentNode is null)
-                    throw new ArgumentException();
+                    throw new ParentNodeException();
             
                 newNode.Parent = parentNode;
                 parentNode.Childrens ??= new ConcurrentBag<Node>();
