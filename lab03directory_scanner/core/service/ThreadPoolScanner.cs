@@ -6,13 +6,13 @@ namespace core.service;
 public class ThreadPoolScanner
 {
     private const int MaxThreads = 5;
-    private SemaphoreSlim _semaphore;
+    private readonly SemaphoreSlim _semaphore;
     private int _count;
     private bool _scannerStarted;
-    private Thread _queueHandler;
+    private readonly Thread _queueHandler;
     private readonly ConcurrentQueue<TaskInfo> _taskQueue;
     private readonly CancellationTokenSource _tokenSource;
-    private object _lock = new();
+    private readonly object _lock = new();
 
 
     public ThreadPoolScanner()
@@ -22,6 +22,7 @@ public class ThreadPoolScanner
         _scannerStarted = false;
         _taskQueue = new ConcurrentQueue<TaskInfo>();
         _tokenSource = new CancellationTokenSource();
+        _queueHandler = new Thread(QueueHandler);
     }
 
     public bool IsFinish()
@@ -34,20 +35,19 @@ public class ThreadPoolScanner
     {
         _count = MaxThreads;
         _scannerStarted = true;
-        _queueHandler = new Thread(QueueHandler);
         _queueHandler.Start(_tokenSource.Token);
     }
 
     private void QueueHandler(object? obj)
     {
-        var token = (CancellationToken)obj;
+        var token = (CancellationToken)obj!;
 
         while (!token.IsCancellationRequested)
         {
             if (_taskQueue.IsEmpty)
                 continue;
 
-            _semaphore.WaitAsync();
+            _semaphore.WaitAsync(token);
             lock (_lock)
             {
                 _count--;
@@ -55,7 +55,7 @@ public class ThreadPoolScanner
 
             _taskQueue.TryDequeue(out var taskInfo);
 
-            ThreadPool.QueueUserWorkItem(TaskWrapper, taskInfo, true);
+            ThreadPool.QueueUserWorkItem(TaskWrapper!, taskInfo, true);
         }
     }
 
