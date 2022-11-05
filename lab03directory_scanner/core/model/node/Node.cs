@@ -4,11 +4,13 @@ namespace core.model.node;
 
 public abstract class Node
 {
+    private string? _route;
+    
     public int Id { get; set; }
     
     public string Name { get; set; }
     
-    public string Route { get; set; }
+    public string Route { get => _route ??= GetRoute(); }
     
     public long Size { get; set; }
     
@@ -16,11 +18,16 @@ public abstract class Node
     
     public Node? Parent { get; set; }
     
-    public ConcurrentBag<Node> Childrens { get; set; }
+    public ConcurrentBag<Node>? Childrens { get; set; }
 
     protected Node()
     {
         Childrens = new ConcurrentBag<Node>();
+    }
+    
+    private string GetRoute()
+    {
+        return Parent is null ? Name : Parent.Route + "/" + Name;
     }
 
     public abstract NodeType GetType();

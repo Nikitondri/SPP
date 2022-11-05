@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:lab03directory_scanner"
+        xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <StackPanel>
+    <UniformGrid Columns="2">
         <StackPanel Height="450
         " HorizontalAlignment="Left" Background="Black" Width="110">
             <Button Margin="10" Width="88" Height="30" Content="Choose File" IsCancel="{Binding IsSearchEnabled}" Command="{Binding ChooseFile}"/>
@@ -17,19 +17,19 @@
         <ScrollViewer Height="455" CanContentScroll="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <TreeView FontSize="17" x:Name="tvFile" ItemsSource="{Binding TreeViewList}">
                 <TreeView.ItemTemplate>
-                    <HierarchicalDataTemplate ItemsSource="{Binding Path=TreeViewNodes}">
+                    <HierarchicalDataTemplate ItemsSource="{Binding Path=ViewNodes}">
                         <DockPanel>
-                            <Image Height="25" Width="25" Source="{Binding PhotoPath}"/>
-                            <TextBlock VerticalAlignment="center" Text ="{Binding FileName}"/>
+                            <Image Height="25" Width="25" Source="{Binding PathToIcon}"/>
+                            <TextBlock VerticalAlignment="center" Text ="{Binding Name}"/>
                             <TextBlock Text ="("/>
-                            <TextBlock Text ="{Binding FileSize}"/>
+                            <TextBlock Text ="{Binding Size}"/>
                             <TextBlock Text =", "/>
-                            <TextBlock Text ="{Binding StringFormat=\{0:P\}, Path=PercentFileSize}"/>
+                            <TextBlock Text ="{Binding StringFormat=\{0:P\}, Path=Percent}"/>
                             <TextBlock Text =")"/>
                         </DockPanel>
                     </HierarchicalDataTemplate>
                 </TreeView.ItemTemplate>
             </TreeView>
         </ScrollViewer>
-    </StackPanel>
+    </UniformGrid>
 </Window>

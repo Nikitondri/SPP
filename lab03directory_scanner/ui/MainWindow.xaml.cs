@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using lab03directory_scanner.VM;
 
 namespace lab03directory_scanner
 {
@@ -23,6 +24,8 @@ namespace lab03directory_scanner
         public MainWindow()
         {
             InitializeComponent();
+            
+            DataContext = new ApplicationViewModel();
         }
     }
 }

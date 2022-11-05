@@ -20,7 +20,12 @@ public class InMemoryNodesRepository : IRepository<Node>
 
     public void Add(Node value)
     {
-        Nodes.TryAdd(Interlocked.Increment(ref _idGenerator), value);
+        lock (Nodes)
+        {
+            var newId = Interlocked.Increment(ref _idGenerator);
+            value.Id = newId;
+        }		
+        Nodes.TryAdd(value.Id, value);
     }
 
     public Node FindById(int id)

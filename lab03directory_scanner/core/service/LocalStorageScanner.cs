@@ -1,4 +1,5 @@
-﻿using core.exception;
+﻿using System.Collections.Concurrent;
+using core.exception;
 using core.factory;
 using core.model;
 using core.model.node;
@@ -48,7 +49,9 @@ public class LocalStorageScanner : IScanner
             filePath = parentNode.Route + "/" + data.FileName;
         }
         else
+        {
             filePath = data.FileName;
+        }
 
         var attr = File.GetAttributes(filePath);
 
@@ -91,6 +94,7 @@ public class LocalStorageScanner : IScanner
                     throw new ArgumentException();
             
                 newNode.Parent = parentNode;
+                parentNode.Childrens ??= new ConcurrentBag<Node>();
                 parentNode.Childrens.Add(newNode);
             }
         }
@@ -112,7 +116,7 @@ public class LocalStorageScanner : IScanner
 
     public Node GetResult()
     {
-        var root = _repository.FindById(0);
+        var root = _repository.FindById(1);
         _percentCalculator.Calculate(root);
         _sizeCalculator.Calculate(root);
         return root;

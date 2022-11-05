@@ -12,7 +12,7 @@ public class ThreadPoolScanner
     private Thread _queueHandler;
     private readonly ConcurrentQueue<TaskInfo> _taskQueue;
     private readonly CancellationTokenSource _tokenSource;
-    private object _lock = new object();
+    private object _lock = new();
 
 
     public ThreadPoolScanner()
