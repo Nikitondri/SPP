@@ -11,7 +11,7 @@ internal static class Tree
     {
         var viewNode = ViewNodeFactory.CreateNode(node.GetType());
         viewNode.Name = node.Name;
-        viewNode.Size = node.Size!.Value;
+        viewNode.Size = node.Size.GetValueOrDefault(0);
         viewNode.Percent = node.Percent;
 
         if (node.Childrens == null) return viewNode;

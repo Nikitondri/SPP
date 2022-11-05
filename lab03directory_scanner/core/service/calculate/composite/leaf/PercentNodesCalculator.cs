@@ -6,7 +6,8 @@ public class PercentNodesCalculator : INodesCalculator
 {
     public void Calculate(Node node)
     {
-        var size = node.Size!.Value;
+        if(node.Size is null) return;
+        var size = node.Size.Value;
         if (node.Parent != null)
             size = node.Parent.Size!.Value;
 
