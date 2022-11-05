@@ -6,7 +6,7 @@ namespace core.service;
 public class ThreadPoolScanner
 {
     private const int MaxThreads = 5;
-    private Semaphore _semaphore;
+    private SemaphoreSlim _semaphore;
     private int _count;
     private bool _scannerStarted;
     private Thread _queueHandler;
@@ -17,7 +17,7 @@ public class ThreadPoolScanner
 
     public ThreadPoolScanner()
     {
-        _semaphore = new Semaphore(MaxThreads, MaxThreads);
+        _semaphore = new SemaphoreSlim(MaxThreads);
         _count = MaxThreads;
         _scannerStarted = false;
         _taskQueue = new ConcurrentQueue<TaskInfo>();
@@ -26,7 +26,8 @@ public class ThreadPoolScanner
 
     public bool IsFinish()
     {
-        return (_taskQueue.IsEmpty && _count == MaxThreads && !_scannerStarted) || _tokenSource.Token.IsCancellationRequested;
+        return (_count == MaxThreads && _taskQueue.IsEmpty && !_scannerStarted) ||
+               _tokenSource.Token.IsCancellationRequested;
     }
 
     public void Start()
@@ -46,31 +47,39 @@ public class ThreadPoolScanner
             if (_taskQueue.IsEmpty)
                 continue;
 
-            _semaphore.WaitOne();
+            _semaphore.WaitAsync();
             lock (_lock)
-            { _count--; }
-				
+            {
+                _count--;
+            }
+
             _taskQueue.TryDequeue(out var taskInfo);
 
             ThreadPool.QueueUserWorkItem(TaskWrapper, taskInfo, true);
         }
     }
-    
+
     private void TaskWrapper(TaskInfo data)
     {
         try
         {
             data.Task(data.TaskData);
         }
-        catch { }
+        catch
+        {
+            // ignored
+        }
         finally
         {
             lock (_lock)
-            { _count++; }
+            {
+                _count++;
+            }
+
             _semaphore.Release();
         }
     }
-    
+
     public void AddTask(Action<FileScanData> task, FileScanData scanData)
     {
         _scannerStarted = false;
@@ -82,7 +91,7 @@ public class ThreadPoolScanner
 
         _taskQueue.Enqueue(info);
     }
-    
+
     public void Stop()
     {
         _tokenSource.Cancel();
