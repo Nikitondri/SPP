@@ -6,7 +6,7 @@ namespace core.repository;
 
 public class InMemoryNodesRepository : IRepository<Node>
 {
-    public ConcurrentDictionary<int, Node> Nodes { get; set; }
+    private ConcurrentDictionary<int, Node> Nodes { get; }
 
     private int _idGenerator;
 
