@@ -5,7 +5,7 @@ using lab03directory_scanner.view.node;
 
 namespace lab03directory_scanner.view;
 
-internal static class Tree
+internal static class TreeCreator
 {
     public static NodeView ToTreeViewNode(this Node node)
     {
