@@ -97,7 +97,7 @@ namespace lab03directory_scanner.VM
 		{
 			get
 			{
-				return _chooseFile ??= new RelayCommand(obj =>
+				return _chooseFile = new RelayCommand(obj =>
 				{
 					using var dialog = new FolderBrowserDialog();
 
@@ -115,7 +115,7 @@ namespace lab03directory_scanner.VM
 		{
 			get
 			{
-				return _startSearch ??= new RelayCommand(obj =>
+				return _startSearch = new RelayCommand(obj =>
 				{
 					_scanner = new LocalStorageScanner();
 					
@@ -142,7 +142,7 @@ namespace lab03directory_scanner.VM
 		{
 			get
 			{
-				return _stopScan ??= new RelayCommand(obj =>
+				return _stopScan = new RelayCommand(obj =>
 				{
 					_scanner?.Stop();
 				});
