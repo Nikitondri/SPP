@@ -2,5 +2,5 @@
 
 public interface IReader<S, D>
 {
-    D read(S source);
+    D Read(S source);
 }

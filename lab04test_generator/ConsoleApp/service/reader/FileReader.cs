@@ -6,7 +6,7 @@ namespace ConsoleApp.service.reader;
 public class FileReader : IReader<string, Task<string>>
 {
     
-    public Task<string> read(string source)
+    public Task<string> Read(string source)
     {
         CorrectPathChecker.ThrowExceptionIfIncorrectPath(source);
         return ReadFileAsync(source);

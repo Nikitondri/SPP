@@ -4,7 +4,7 @@ namespace ConsoleApp.service.reader;
 
 public class DirectoryReader : IReader<string, string[]>
 {
-    public string[] read(string source)
+    public string[] Read(string source)
     {
         CorrectPathChecker.ThrowExceptionIfIncorrectPath(source);
         return ReadDirectory(source);
