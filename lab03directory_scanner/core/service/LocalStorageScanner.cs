@@ -63,7 +63,7 @@ public class LocalStorageScanner : IScanner
         {
             var fileInfo = new FileInfo(filePath);
             fileSize = fileInfo.Length;
-            isLink = fileInfo.Extension == ".lnk"; 
+            isLink = fileInfo.LinkTarget == null;
             fileType = NodeType.File;
         }
 
