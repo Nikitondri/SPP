@@ -6,11 +6,11 @@ namespace ConsoleApp.service.pipeline.item.source;
 public class SourcePipelineItem : ISourcePipelineItem<string>
 {
     private IReader<string, string[]> _directoryReader;
-    private IReader<string, string> _fileReader;
+    private IReader<string, Task<string>> _fileReader;
     private readonly int _maxReadThreads;
     private TransformManyBlock<string, string> _startBlock;
 
-    public SourcePipelineItem(IReader<string, string[]> directoryReader, IReader<string, string> fileReader,
+    public SourcePipelineItem(IReader<string, string[]> directoryReader, IReader<string, Task<string>> fileReader,
         int maxReadThreads)
     {
         _directoryReader = directoryReader;
@@ -18,13 +18,13 @@ public class SourcePipelineItem : ISourcePipelineItem<string>
         _maxReadThreads = maxReadThreads;
     }
 
-    public ISourceBlock<string> GetItem()
+    public ISourceBlock<string> InitAndGetItem()
     {
         var directoryReader = new TransformManyBlock<string, string>(_directoryReader.Read);
         var fileReader = CreateFileReader();
 
         _startBlock = directoryReader;
-        
+
         var opt = new DataflowLinkOptions { PropagateCompletion = true };
         directoryReader.LinkTo(fileReader, opt);
         return fileReader;

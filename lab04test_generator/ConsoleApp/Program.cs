@@ -1,3 +1,52 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using ConsoleApp.service.pipeline;
+using ConsoleApp.service.pipeline.item.source;
+using ConsoleApp.service.pipeline.item.target;
+using ConsoleApp.service.reader;
+using ConsoleApp.service.writer;
+using Core.pipeline.item;
 
-Console.WriteLine("Hello, World!");
+namespace ConsoleApp;
+
+public static class Program
+{
+    const string Input = @"C:\Users\nikita.zakharenko\Desktop\Tests-Generator-master\Tests\input";
+    const string Output = @"C:\Users\nikita.zakharenko\Desktop\Tests-Generator-master\Tests\output";
+
+    public static void Main()
+    {
+        var pipelineRunner = PipelineRunner();
+        pipelineRunner.Run(Input);
+        Console.ReadLine();
+    }
+
+    private static IPipelineRunner PipelineRunner()
+    {
+        return new PipelineRunner(
+            SourcePipelineItem(),
+            PropagatorPipelineItem(),
+            TargetPipelineItem()
+        );
+    }
+
+    private static ISourcePipelineItem<string> SourcePipelineItem()
+    {
+        return new SourcePipelineItem(
+            new DirectoryReader(),
+            new FileReader(),
+            10);
+    }
+
+    private static ITargetPipelineItem<string> TargetPipelineItem()
+    {
+        return new TargetPipelineItem(
+            10,
+            Output,
+            new FileAsyncWriter()
+        );
+    }
+
+    private static IPropagatorPipelineItem<string, string> PropagatorPipelineItem()
+    {
+        return null;
+    }
+}

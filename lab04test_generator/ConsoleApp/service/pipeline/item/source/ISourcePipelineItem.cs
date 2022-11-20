@@ -6,5 +6,5 @@ public interface ISourcePipelineItem<T>
 {
     void Start(T source);
     
-    ISourceBlock<T> GetItem();
+    ISourceBlock<T> InitAndGetItem();
 }

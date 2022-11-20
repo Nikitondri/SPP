@@ -18,7 +18,7 @@ public class TargetPipelineItem : ITargetPipelineItem<string>
         _fileWriter = fileWriter;
     }
 
-    public ITargetBlock<string> GetItem()
+    public ITargetBlock<string> InitAndGetItem()
     {
         var writer = CreateWriteFileBlock();
         _lastBlock = writer;
