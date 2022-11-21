@@ -8,7 +8,7 @@ public class FileReader : IReader<string, Task<string>>
     
     public Task<string> Read(string source)
     {
-        CorrectPathChecker.ThrowExceptionIfIncorrectPath(source);
+        CorrectPathChecker.ThrowExceptionIfIncorrectFilePath(source);
         return ReadFileAsync(source);
     }
 

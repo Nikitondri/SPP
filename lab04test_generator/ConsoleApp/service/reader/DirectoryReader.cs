@@ -6,7 +6,7 @@ public class DirectoryReader : IReader<string, string[]>
 {
     public string[] Read(string source)
     {
-        CorrectPathChecker.ThrowExceptionIfIncorrectPath(source);
+        CorrectPathChecker.ThrowExceptionIfIncorrectDirPath(source);
         return ReadDirectory(source);
     }
 
