@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks.Dataflow;
 
-namespace Core.pipeline.item;
+namespace Core.service.pipeline.item;
 
 public interface IPropagatorPipelineItem<S, D>
 {

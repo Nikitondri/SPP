@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks.Dataflow;
 using ConsoleApp.service.pipeline.item.source;
 using ConsoleApp.service.pipeline.item.target;
-using Core.pipeline.item;
+using Core.service.pipeline.item;
 
 namespace ConsoleApp.service.pipeline;
 

@@ -3,14 +3,17 @@ using ConsoleApp.service.pipeline.item.source;
 using ConsoleApp.service.pipeline.item.target;
 using ConsoleApp.service.reader;
 using ConsoleApp.service.writer;
-using Core.pipeline.item;
+using Core.service.pipeline.item;
 
 namespace ConsoleApp;
 
 public static class Program
 {
-    const string Input = @"C:\Users\nikita.zakharenko\Desktop\Tests-Generator-master\Tests\input";
-    const string Output = @"C:\Users\nikita.zakharenko\Desktop\Tests-Generator-master\Tests\output";
+    private const string Input =
+        @"C:\Users\nikita.zakharenko\Desktop\SPP\SPP\lab04test_generator\ConsoleApp\resources\input";
+
+    private const string Output =
+        @"C:\Users\nikita.zakharenko\Desktop\SPP\SPP\lab04test_generator\ConsoleApp\resources\output";
 
     public static void Main()
     {
@@ -47,6 +50,6 @@ public static class Program
 
     private static IPropagatorPipelineItem<string, string> PropagatorPipelineItem()
     {
-        return null;
+        return new PropagatorPipelineItem(10);
     }
 }
