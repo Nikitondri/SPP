@@ -1,4 +1,6 @@
-﻿using ConsoleApp.service.pipeline;
+﻿using ConsoleApp.config;
+using ConsoleApp.config.builder;
+using ConsoleApp.service.pipeline;
 using ConsoleApp.service.pipeline.item.source;
 using ConsoleApp.service.pipeline.item.target;
 using ConsoleApp.service.reader;
@@ -9,16 +11,17 @@ namespace ConsoleApp;
 
 public static class Program
 {
-    private const string Input =
-        @"C:\Users\nikita.zakharenko\Desktop\SPP\SPP\lab04test_generator\ConsoleApp\resources\input";
+    private static readonly ProgramConfig ProgramConfig;
 
-    private const string Output =
-        @"C:\Users\nikita.zakharenko\Desktop\SPP\SPP\lab04test_generator\ConsoleApp\resources\output";
+    static Program()
+    {
+        ProgramConfig = ConfigBuilder.Build();
+    }
 
     public static void Main()
     {
         var pipelineRunner = PipelineRunner();
-        pipelineRunner.Run(Input);
+        pipelineRunner.Run(ProgramConfig.Input);
         Console.ReadLine();
     }
 
@@ -43,7 +46,7 @@ public static class Program
     {
         return new TargetPipelineItem(
             10,
-            Output,
+            ProgramConfig.Output,
             new FileAsyncWriter()
         );
     }
