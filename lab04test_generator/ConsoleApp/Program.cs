@@ -39,13 +39,13 @@ public static class Program
         return new SourcePipelineItem(
             new DirectoryReader(),
             new FileReader(),
-            10);
+            ProgramConfig.MaxReadThread);
     }
 
     private static ITargetPipelineItem<string> TargetPipelineItem()
     {
         return new TargetPipelineItem(
-            10,
+            ProgramConfig.MaxWriteThread,
             ProgramConfig.Output,
             new FileAsyncWriter()
         );
@@ -53,6 +53,6 @@ public static class Program
 
     private static IPropagatorPipelineItem<string, string> PropagatorPipelineItem()
     {
-        return new PropagatorPipelineItem(10);
+        return new PropagatorPipelineItem(ProgramConfig.MaxGenerateThread);
     }
 }
