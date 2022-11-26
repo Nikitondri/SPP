@@ -35,11 +35,7 @@ public class TestGeneratorTest
             }
         ";
         
-        var classes = CSharpSyntaxTree.ParseText(code).GetRoot().DescendantNodes().OfType<ClassDeclarationSyntax>()
-            .Where(@class => @class.Modifiers.Any(SyntaxKind.PublicKeyword))
-            .Where(@class => !@class.Modifiers.Any(SyntaxKind.StaticKeyword)).ToArray();
-
-        var result = TestClassGenerator.CreateTest(classes[0]);
+        var result = GenerateCode(code);
         
         Assert.True(result.Contains("Assert.Fail(\"auto generated test\");"));
         Assert.True(result.Contains("public void Method1Test()"));
@@ -60,16 +56,21 @@ public class TestGeneratorTest
             }
         ";
 
-        var classes = CSharpSyntaxTree.ParseText(code).GetRoot().DescendantNodes().OfType<ClassDeclarationSyntax>()
-            .Where(@class => @class.Modifiers.Any(SyntaxKind.PublicKeyword))
-            .Where(@class => !@class.Modifiers.Any(SyntaxKind.StaticKeyword)).ToArray();
-
-        var result = TestClassGenerator.CreateTest(classes[0]);
+        var result = GenerateCode(code);
         
         Assert.False(result.Contains("Assert.Fail(\"auto generated test\");"));
         Assert.False(result.Contains("public void"));
         Assert.True(result.Contains("[TestFixture]"));
         Assert.True(result.Contains("namespace GeneratedNamespace.Tests"));
         Assert.True(result.Contains("public class"));
+    }
+
+    private string GenerateCode(string code)
+    {
+        var classes = CSharpSyntaxTree.ParseText(code).GetRoot().DescendantNodes().OfType<ClassDeclarationSyntax>()
+            .Where(@class => @class.Modifiers.Any(SyntaxKind.PublicKeyword))
+            .Where(@class => !@class.Modifiers.Any(SyntaxKind.StaticKeyword)).ToArray();
+
+        return TestClassGenerator.CreateTest(classes[0]);
     }
 }

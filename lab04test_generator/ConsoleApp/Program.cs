@@ -18,11 +18,10 @@ public static class Program
         ProgramConfig = ConfigBuilder.Build();
     }
 
-    public static void Main()
+    public static async Task Main()
     {
         var pipelineRunner = PipelineRunner();
-        pipelineRunner.Run(ProgramConfig.Input);
-        Console.ReadLine();
+        await pipelineRunner.Run(ProgramConfig.Input);
     }
 
     private static IPipelineRunner PipelineRunner()
