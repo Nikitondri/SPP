@@ -6,6 +6,10 @@
         {
         }
         
+        public void Method1(int a)
+        {
+        }
+        
         private void Method2()
         {
         }

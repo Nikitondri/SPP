@@ -16,9 +16,11 @@ public static class TestClassGenerator
     };
 
     private const string Tab = "\t";
+    // private static Dictionary<string, int> _methodsName;
 
     public static string CreateTest(TypeDeclarationSyntax classDeclaration)
     {
+        Dictionary<string, int> methodsName = new();
         var unit = SyntaxFactory.CompilationUnit();
         unit = DefaultLoadDirectiveList.Aggregate(unit,
             (current, loadDirective) => current.AddUsings(loadDirective));
@@ -105,12 +107,33 @@ public static class TestClassGenerator
                                 .Whitespace(Tab)),
                         SyntaxKind.CloseBraceToken, SyntaxFactory
                             .TriviaList()))
-                .AddMembers(AddTestMethods(classDeclaration)));
+                .AddMembers(AddTestMethods(classDeclaration, methodsName)));
 
+        methodsName.Clear();
         return unit.NormalizeWhitespace().AddMembers(@namespace).ToFullString();
     }
 
-    private static MemberDeclarationSyntax[] AddTestMethods(SyntaxNode classDeclaration)
+    private static string ProvideMethodName(string methodName, Dictionary<string, int> methodsName)
+    {
+        string result;
+        if (methodsName.ContainsKey(methodName))
+        {
+            methodsName[methodName] += 1;
+            result = methodName + methodsName[methodName];
+        }
+        else
+        {
+            methodsName.Add(methodName, 0);
+            result = methodName;
+        }
+
+        return result + "Test";
+    }
+
+    private static MemberDeclarationSyntax[] AddTestMethods(
+        SyntaxNode classDeclaration,
+        Dictionary<string, int> methodsName
+    )
     {
         var methods = classDeclaration.DescendantNodes().OfType<MethodDeclarationSyntax>()
             .Where(method => method.Modifiers.Any(SyntaxKind.PublicKeyword));
@@ -123,7 +146,7 @@ public static class TestClassGenerator
                             SyntaxKind.VoidKeyword, SyntaxFactory
                                 .TriviaList(SyntaxFactory
                                     .Space))), SyntaxFactory
-                    .Identifier(method.Identifier.Text + "Test"))
+                    .Identifier(ProvideMethodName(method.Identifier.Text, methodsName)))
                 .WithAttributeLists(SyntaxFactory
                     .SingletonList(SyntaxFactory
                         .AttributeList(SyntaxFactory
