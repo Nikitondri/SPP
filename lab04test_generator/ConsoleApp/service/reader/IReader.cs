@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp.service.reader;
 
-public interface IReader<S, D>
+public interface IReader<S, R>
 {
-    D Read(S source);
+    R Read(S source);
 }
