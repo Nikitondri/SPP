@@ -65,6 +65,36 @@ public class TestGeneratorTest
         Assert.True(result.Contains("public class"));
     }
 
+    [Test]
+    public void CountMethodsTest()
+    {
+        var code = @"
+           namespace ConsoleApp.resources.input
+           {
+                public class Test3
+                {
+                    public void Method1()
+                    {
+                    }
+                    
+                    private void Method2()
+                    {
+                    }
+                    
+                    public void Method3()
+                    {
+                    }
+                }
+            }
+        ";
+
+        var result = GenerateCode(code);
+
+        var generatedClass = CSharpSyntaxTree.ParseText(result).GetCompilationUnitRoot();
+        var generatedMethods = generatedClass.DescendantNodes().OfType<MethodDeclarationSyntax>().ToList();
+        Assert.That(generatedMethods, Has.Count.EqualTo(2));
+    }
+
     private string GenerateCode(string code)
     {
         var classes = CSharpSyntaxTree.ParseText(code).GetRoot().DescendantNodes().OfType<ClassDeclarationSyntax>()
