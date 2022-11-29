@@ -95,6 +95,41 @@ public class TestGeneratorTest
         Assert.That(generatedMethods, Has.Count.EqualTo(2));
     }
 
+    [Test]
+    public void OverloadedMethodTest()
+    {
+        var code = @"
+           namespace ConsoleApp.resources.input
+           {
+                public class Test3
+                {
+                    public void Method()
+                    {
+                    }
+                    
+                    public void Method()
+                    {
+                    }
+                    
+                    public void MethodZ()
+                    {
+                    }
+
+                    public void MethodZ()
+                    {
+                    }
+                }
+            }
+        ";
+
+        var result = GenerateCode(code);
+        
+        Assert.True(result.Contains("public void MethodTest()"));
+        Assert.True(result.Contains("public void Method1Test()"));
+        Assert.True(result.Contains("public void MethodZTest()"));
+        Assert.True(result.Contains("public void MethodZ1Test()"));
+    } 
+
     private string GenerateCode(string code)
     {
         var classes = CSharpSyntaxTree.ParseText(code).GetRoot().DescendantNodes().OfType<ClassDeclarationSyntax>()

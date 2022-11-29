@@ -2,22 +2,22 @@
 {
     public class Test1
     {
-        public void Method1()
+        public void Method()
         {
             Console.WriteLine("hello world");
         }
         
-        private void Method2()
+        public void Method(int a)
         {
             Console.WriteLine("hello world");
         }
         
-        public void Method3()
+        public void MethodZ()
         {
             Console.WriteLine("hello world");
         }
         
-        public void Method4()
+        public void MethodZ(int a)
         {
             Console.WriteLine("hello world");
         }
