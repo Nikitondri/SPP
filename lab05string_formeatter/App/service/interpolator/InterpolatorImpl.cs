@@ -1,10 +1,13 @@
 ﻿using System.Linq.Expressions;
+using App.exception;
 using App.service.cache;
 
 namespace App.service.interpolator;
 
 public class InterpolatorImpl : IInterpolator
 {
+    private const string ToStringMethodName = "ToString";
+
     private readonly StringFormatterCache _cache = new();
 
     public string Interpolate(string value, object obj)
@@ -22,12 +25,19 @@ public class InterpolatorImpl : IInterpolator
 
     private string InterpolateNotExistFunc(string value, string key, object obj)
     {
-        var param = Expression.Parameter(typeof(object));
-        var field = Expression.PropertyOrField(Expression.TypeAs(param, obj.GetType()), value);
-        var callExpression = Expression.Call(field, "ToString", null, null);
-        var expression = Expression.Lambda<Func<object, string>>(callExpression, param);
-        var result = expression.Compile();
-        _cache.AddElement(key, result);
-        return result(obj);
+        try
+        {
+            var param = Expression.Parameter(typeof(object));
+            var field = Expression.PropertyOrField(Expression.TypeAs(param, obj.GetType()), value);
+            var callExpression = Expression.Call(field, ToStringMethodName, null, null);
+            var expression = Expression.Lambda<Func<object, string>>(callExpression, param);
+            var result = expression.Compile();
+            _cache.AddElement(key, result);
+            return result(obj);
+        }
+        catch (Exception)
+        {
+            throw new InterpolateException();
+        }
     }
 }
