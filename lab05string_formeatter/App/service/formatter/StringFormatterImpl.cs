@@ -7,7 +7,7 @@ namespace App.service.formatter;
 
 public class StringFormatterImpl : IStringFormatter
 {
-    public static readonly StringFormatterImpl Shared = new();
+    // public static readonly StringFormatterImpl Shared = new();
 
     private readonly IFormatterStepValidator _validator = new FormatterStepValidatorImpl();
     private readonly IInterpolator _interpolator = new InterpolatorImpl();
@@ -41,7 +41,7 @@ public class StringFormatterImpl : IStringFormatter
     {
         if (!_validator.ValidateStep(index, template))
         {
-            throw new UnbalancedBracketsException();
+            throw new BracketsException();
         }
     }
 
@@ -76,7 +76,7 @@ public class StringFormatterImpl : IStringFormatter
         _isText = false;
     }
 
-    private bool IsBrackets(char currentChar)
+    private static bool IsBrackets(char currentChar)
     {
         return currentChar is CloseBracket or OpenBracket;
     }
