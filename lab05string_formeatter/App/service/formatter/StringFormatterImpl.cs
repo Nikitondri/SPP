@@ -7,8 +7,6 @@ namespace App.service.formatter;
 
 public class StringFormatterImpl : IStringFormatter
 {
-    // public static readonly StringFormatterImpl Shared = new();
-
     private readonly IFormatterStepValidator _validator = new FormatterStepValidatorImpl();
     private readonly IInterpolator _interpolator = new InterpolatorImpl();
 
