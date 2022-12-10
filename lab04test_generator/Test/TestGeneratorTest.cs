@@ -107,15 +107,15 @@ public class TestGeneratorTest
                     {
                     }
                     
-                    public void Method()
+                    public void Method(int a)
                     {
                     }
                     
-                    public void MethodZ()
+                    public void MethodR()
                     {
                     }
 
-                    public void MethodZ()
+                    public void MethodR(int a)
                     {
                     }
                 }
@@ -126,8 +126,8 @@ public class TestGeneratorTest
         
         Assert.True(result.Contains("public void MethodTest()"));
         Assert.True(result.Contains("public void Method1Test()"));
-        Assert.True(result.Contains("public void MethodZTest()"));
-        Assert.True(result.Contains("public void MethodZ1Test()"));
+        Assert.True(result.Contains("public void MethodRTest()"));
+        Assert.True(result.Contains("public void MethodR1Test()"));
     } 
 
     private string GenerateCode(string code)
