@@ -10,8 +10,8 @@ public class StringFormatterImpl : IStringFormatter
     private readonly IFormatterStepValidator _validator = new FormatterStepValidatorImpl();
     private readonly IInterpolator _interpolator = new InterpolatorImpl();
 
-    private bool _isText;
     private bool _isScreen;
+    private bool _isText;
     private string _tempField = "";
 
     public string Format(string template, object target)
@@ -46,32 +46,32 @@ public class StringFormatterImpl : IStringFormatter
     private void CheckOpenBracket(ref string result, char currentChar)
     {
         if (currentChar != OpenBracket) return;
-        if (_isText)
+        if (_isScreen)
         {
             result += currentChar;
-            _isText = false;
-            _isScreen = true;
+            _isScreen = false;
+            _isText = true;
         }
         else
         {
             _tempField = "";
-            _isText = true;
+            _isScreen = true;
         }
     }
 
     private void CheckCloseBracket(ref string result, char currentChar, object obj)
     {
         if (currentChar != CloseBracket) return;
-        if (_isScreen)
+        if (_isText)
         {
             result += currentChar;
-            _isScreen = false;
+            _isText = false;
         }
 
-        if (!_isText) return;
+        if (!_isScreen) return;
 
         result += _interpolator.Interpolate(_tempField, obj);
-        _isText = false;
+        _isScreen = false;
     }
 
     private static bool IsBrackets(char currentChar)
@@ -81,7 +81,7 @@ public class StringFormatterImpl : IStringFormatter
 
     private void CheckIsText(ref string result, char currentChar)
     {
-        if (!_isText)
+        if (!_isScreen)
         {
             result += currentChar;
         }
