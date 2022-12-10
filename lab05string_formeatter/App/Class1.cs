@@ -1,5 +1,5 @@
-﻿namespace Test;
+﻿namespace App;
+
 public class Class1
 {
-
 }

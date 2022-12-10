@@ -1,4 +1,4 @@
-namespace Tests;
+namespace lab05string_formeatter;
 
 public class Tests
 {
