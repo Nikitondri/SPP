@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 
-namespace App.service.cache;
+namespace App.repository.cache;
 
 public class StringFormatterCache
 {

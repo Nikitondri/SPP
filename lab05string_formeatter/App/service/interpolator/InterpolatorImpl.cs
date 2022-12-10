@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 using App.exception;
-using App.service.cache;
+using App.repository.cache;
 
 namespace App.service.interpolator;
 
